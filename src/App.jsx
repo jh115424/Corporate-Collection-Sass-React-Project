@@ -1,4 +1,5 @@
 import TopHeader from "./Components/TopHeader"
+import SubHeader from "./SubHeader"
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
       <TopHeader />
+        <SubHeader />
     </>
   )
 }

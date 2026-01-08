@@ -1,21 +1,30 @@
-import React from "react";
-import "./topHeader.css"
+import { useState } from "react";
+import "./topHeader.css";
+import SubHeader from "../SubHeader";
 
+export default function TopHeader() {
+  const [clearBanner, setClearBanner] = useState(false);
 
+  const removeHandleClick = () => {
+    setClearBanner(true);
+  };
 
-export default function TopHeader () {
-
-    return (
-    
+  return (
     <>
-    
-    <div className="topBlackHeader">
-     <p>Elevate your corporate environment with handpicked luxury essentials.</p>
-
-    </div>
-    
+      {!clearBanner && (
+        <div className="promoBanner">
+          <div className="topBlackHeader">
+            <p headerSentence>
+              Elevate your corporate environment with handpicked luxury
+              essentials.
+            </p>
+          </div>
+          <div className="hideBanner" onClick={removeHandleClick}>
+            X
+          </div>
+        </div>
+      
+      )}
     </>
-    
-)
-
+  );
 }
