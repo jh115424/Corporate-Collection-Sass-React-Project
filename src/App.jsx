@@ -1,15 +1,15 @@
-import TopHeader from "./Components/TopHeader"
-import SubHeader from "./SubHeader"
+import TopHeader from "./Components/TopHeader";
+import SubHeader from "./SubHeader";
+import LandingStatement from "./Components/LandingStatement";
 
 function App() {
-
-
   return (
     <>
       <TopHeader />
-        <SubHeader />
+      <SubHeader />
+      <LandingStatement />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

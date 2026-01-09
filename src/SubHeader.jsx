@@ -1,5 +1,6 @@
 import React from "react";
 import "./subHeader.css";
+import LandingStatement from "./Components/LandingStatement"
 
 export default function SubHeader() {
   return (
