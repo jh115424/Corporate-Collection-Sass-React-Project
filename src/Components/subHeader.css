@@ -1,0 +1,76 @@
+.dropDownContainer {
+  display: flex;
+  background-color: rgb(227 230 231 / 90%);
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  height: 60px;
+  gap: 60px;
+  margin-top: 15px;
+  border-radius: 32px;
+}
+
+.dropDownContainer:hover {
+  background-color: white;
+}
+
+.dropDownContainer > a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
+.companyName {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.ccLogo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  background-color: rgb(188, 196, 236);
+  align-items: center;
+  justify-content: center;
+
+  font-size: larger;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: "Felipa", serif;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+.productsTopMenuLeft {
+  gap: 35px;
+  font-weight: 400;
+  display: flex;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.productsButton,
+.productsTopMenuLeft {
+  margin-left: auto;
+}
+
+.contactButton,
+.productsButton,
+.productsTopMenuLeft p {
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.contactButton,
+.productsButton,
+.productsTopMenuLeft p:hover {
+  background-color: rgb(227 230 231 / 90%);
+}

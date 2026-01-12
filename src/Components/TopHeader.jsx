@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./topHeader.css";
-import SubHeader from "../SubHeader";
+import SubHeader from "./SubHeader";
 
 export default function TopHeader() {
   const [clearBanner, setClearBanner] = useState(false);
@@ -14,7 +14,7 @@ export default function TopHeader() {
       {!clearBanner && (
         <div className="promoBanner">
           <div className="topBlackHeader">
-            <p headerSentence>
+            <p className="headerSentence">
               Elevate your corporate environment with handpicked luxury
               essentials.
             </p>
@@ -23,7 +23,6 @@ export default function TopHeader() {
             X
           </div>
         </div>
-      
       )}
     </>
   );

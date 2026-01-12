@@ -1,0 +1,55 @@
+.mainStatement {
+  margin-top: 50px;
+  font-size: 50px;
+  line-height: 80px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.rotatingStatementEnd {
+  color: blue;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.rotatingStatementEnd {
+  display: inline-block;
+  animation: slideDown 0.5s ease-out;
+}
+
+.gettingStartedAndDemoSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.buttonsStatement {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 300;
+  color: rgb(40, 39, 39);
+}
+.wholesaleButton,
+.schedulingButton {
+  padding: 8px 16px;
+  border-radius: 30px;
+  height: 55px;
+  font-size: 15px;
+  width: 200px;
+}
+
+.wholesaleButton {
+  background-color: black;
+  color: white;
+}

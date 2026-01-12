@@ -1,0 +1,14 @@
+.topImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.threeImages {
+  display: flex;
+
+  width: 700px;
+  height: 500px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px 5px blue;
+}

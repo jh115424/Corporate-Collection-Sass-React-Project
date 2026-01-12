@@ -2,52 +2,51 @@ import React from "react";
 import "./landingStatement.css";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router";
+
+import SubHeader from "./SubHeader";
+
+const words = [
+  "distinguished spaces ",
+  "executive offices",
+  "iconic workspaces",
+  "prestigious environments",
+];
 
 export default function TopHeader() {
-  const [endWord, setEndWord] = useState("");
+  const [endWord, setEndWord] = useState("distinguished spaces");
 
-  const words = ["distinguished spaces ", "executive offices", "iconic workspaces", "prestigious environments"]
+  useEffect(() => {
+    let index = 0;
+    const wordInterval = setInterval(() => {
+      index = (index + 1) % words.length;
+      setEndWord(words[index]);
+    }, 4000);
+
+    return () => clearInterval(wordInterval);
+  }, []);
 
   return (
     <>
       <div className="mainStatement">
-        <p>The luxury furniture and accessory platform for</p>
-        <div className="rotatingStatementEnd"></div>
+        The luxury furniture and accessory platform for <br />
+        <span key={endWord} className="rotatingStatementEnd">
+          {endWord}
+        </span>
+      </div>
+
+      <p className="buttonsStatement">
+        Transform your office into the competitive edge your executive vision
+        demands
+      </p>
+      <div className="gettingStartedAndDemoSection">
+        <Link to="/wholesale">
+          <button className="wholesaleButton">Wholesale Inquiries</button>
+        </Link>
+        <Link to="/consultation">
+          <button className="schedulingButton">Schedule a Consultation </button>
+        </Link>
       </div>
     </>
   );
 }
-
-// Option 1:
-// "The luxury furniture platform for [rotating]"
-
-// Rotating phrases: distinguished spaces | executive offices | iconic workspaces | prestigious environments
-
-// STEPS TO CREATE ROTATING TEXT:
-// Step 1: Set up the structure
-
-// Create the static text part
-// Create a special container for the rotating text
-// Put placeholder text in that container initially
-
-// Step 2: Store your rotating phrases
-
-// Keep a list of all the phrases you want to rotate through
-// Know which phrase is currently showing
-
-// Step 3: Set up the rotation logic
-
-// Set a timer (like every 3-4 seconds)
-// When timer hits, swap to the next phrase in your list
-// When you reach the last phrase, loop back to the first one
-
-// Step 4: Style it (CSS)
-
-// Add fade in/out effects when text changes
-// Make transitions smooth
-// Style the container so text changes don't cause layout shifts
-
-// Step 5: Start it automatically
-
-// When the component loads, start the rotation automatically
-// Keep it running until the user leaves the page
