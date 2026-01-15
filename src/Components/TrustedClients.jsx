@@ -1,5 +1,6 @@
 import React from "react";
 import "./trustedClients.css";
+import CompanyCarousel from "./CompanyCarousel";
 
 export default function TrustedClients() {
   return (

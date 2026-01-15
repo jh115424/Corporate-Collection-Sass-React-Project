@@ -1,0 +1,35 @@
+.cardContainer {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.card1,
+.card2,
+.card3,
+.card4 {
+  height: 140px;
+  width: 250px;
+  border-radius: 10px;
+  background-color: rgb(239, 238, 238);
+}
+
+.disclaimer {
+  text-align: center;
+}
+
+.card1,
+.card2 p {
+  text-align: center;
+}
+
+.numberStat {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.statement {
+  font-size: 20px;
+  color: rgb(118, 117, 117);
+}
