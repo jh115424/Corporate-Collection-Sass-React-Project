@@ -20,7 +20,9 @@
 }
 
 .card1,
-.card2 p {
+.card2,
+.card3,
+.card4 p {
   text-align: center;
 }
 

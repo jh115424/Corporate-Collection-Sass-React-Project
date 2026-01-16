@@ -4,6 +4,7 @@ import LandingStatement from "./Components/LandingStatement";
 import LandingPageTopImage from "./Components/LandingPageTopImage";
 import CompanyCarousel from "./Components/CompanyCarousel";
 import StatsSection from "./Components/StatsSection";
+import FurnitureSlab from "./Components/FurnitureSlab";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <LandingPageTopImage />
       <CompanyCarousel/>
       <StatsSection />
+      <FurnitureSlab />
 
     </>
   );

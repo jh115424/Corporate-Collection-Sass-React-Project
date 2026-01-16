@@ -1,6 +1,7 @@
 import React from "react";
 import "./statsSection.css";
 
+
 export default function StatsSection() {
   return (
     <>
@@ -14,13 +15,20 @@ export default function StatsSection() {
             <p className="numberStat">$50M Revenue</p>
             <p className="statement">Performance Metrics</p>
           </div>
-          <div className="card3"></div>
-          <div className="card4"></div>
+          <div className="card3">
+            <p className="numberStat">98% Rating</p>
+            <p className="statement">Results That Matter</p>
+          </div>
+          <div className="card4">
+            <p className="numberStat">24% Growth</p>
+            <p className="statement">Growth Metrics</p>
+          </div>
         </div>
       </div>
       <p className="disclaimer">
         Portfolio demonstration. Logos used for presentation purposes only."
       </p>
+     
     </>
   );
 }

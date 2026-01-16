@@ -8,6 +8,9 @@
   gap: 60px;
   margin-top: 15px;
   border-radius: 32px;
+  position: sticky;
+  top: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .dropDownContainer:hover {
