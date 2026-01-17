@@ -8,8 +8,8 @@ export default function furnitureSlab() {
     return (
         <>
         
-        <div className="furnitureVideoContainer">
-            
+        <div className="furnitureVideoTestimonialContainer">
+
         </div>
         
         </>
