@@ -25,10 +25,7 @@ export default function StatsSection() {
           </div>
         </div>
       </div>
-      <p className="disclaimer">
-        Portfolio demonstration. Logos used for presentation purposes only."
-      </p>
-     
+   
     </>
   );
 }

@@ -1,0 +1,52 @@
+.FooterContainer {
+  background-color: black;
+  height: 550px;
+  width: 100%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: 10;
+}
+
+.firstFooterColumn,
+.secondFooterColumn,
+.thirdFooterColumn {
+  color: lightgrey;
+}
+
+.companyNameFinisher {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: black;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ending {
+  font-size: 168px;
+  text-align: center;
+  color: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 0;
+  line-height: 1;
+  opacity: 0.998178;
+  font-size: 168px;
+  text-align: center;
+  margin: 0;
+}
+
+.ending::after {
+  background: linear-gradient(to bottom, #808080, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

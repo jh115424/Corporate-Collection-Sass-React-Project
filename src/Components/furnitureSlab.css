@@ -10,4 +10,33 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 30px;
+
+
+}
+
+.videoIntroPhrase {
+
+ display: flex;
+    height: 1000px;
+    margin-left: 20px;
+    justify-content: space-around;
+    font-size: 28px;
+    margin-top: 100px;
+}
+
+.phrase {
+
+    margin-top: 200px;
+}
+
+.CEO-Video {
+    height: 350px;
+    width: 300px;
+    margin-top: 50px;
+
+     border-radius: 15px; /* Apply the border radius to the wrapper */
+  overflow: hidden;   /* Crucial: This clips the inner video to match the border radius */
+  width: 100%;  
+
+ 
 }

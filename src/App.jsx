@@ -5,20 +5,48 @@ import LandingPageTopImage from "./Components/LandingPageTopImage";
 import CompanyCarousel from "./Components/CompanyCarousel";
 import StatsSection from "./Components/StatsSection";
 import FurnitureSlab from "./Components/FurnitureSlab";
+import Footer from "./Components/Footer";
+
+// function App() {
+//   return (
+//     <>
+//       <TopHeader />
+//       <SubHeader />
+//       <LandingStatement />
+//       <LandingPageTopImage />
+//       <CompanyCarousel />
+//       <StatsSection />
+//       <FurnitureSlab />
+//       <Footer />
+//       <p className="disclaimer">
+//         Portfolio demonstration. Logos used for presentation purposes only."
+//       </p>
+//     </>
+//   );
+// }
 
 function App() {
   return (
-    <>
+    <div style={{position: 'relative', zIndex: 10, backgroundColor: 'white', paddingBottom: '100vh'}}>
       <TopHeader />
       <SubHeader />
       <LandingStatement />
       <LandingPageTopImage />
-      <CompanyCarousel/>
+      <CompanyCarousel />
       <StatsSection />
       <FurnitureSlab />
-
-    </>
+      <Footer />
+      <p className="disclaimer">
+        Portfolio demonstration. Logos used for presentation purposes only."
+      </p>
+    </div>
   );
 }
 
+
+
 export default App;
+
+
+
+

@@ -36,20 +36,20 @@ const company = [
 export default function CompanyCarousel() {
   const [position, setPosition] = useState(0);
 
-  useEffect(() => {
-    const nameInterval = setInterval(() => {
-      setPosition((prevPosition) => {
-        const newPosition = prevPosition - 2;
+//   useEffect(() => {
+//     const nameInterval = setInterval(() => {
+//       setPosition((prevPosition) => {
+//         const newPosition = prevPosition - 2;
 
-        if (newPosition < -1500) {
-          return 0;
-        } else {
-          return newPosition;
-        }
-      });
-    }, 25);
-    return () => clearInterval(nameInterval);
-  }, []);
+//         if (newPosition < -1500) {
+//           return 0;
+//         } else {
+//           return newPosition;
+//         }
+//       });
+//     }, 25);
+//     return () => clearInterval(nameInterval);
+//   }, []);
 
   return (
     <>
