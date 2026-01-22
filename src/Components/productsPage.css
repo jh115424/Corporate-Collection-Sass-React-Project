@@ -1,0 +1,30 @@
+.discountBanner {
+    background-color: black;
+    height: 45px;
+    color: white;
+    text-align: center;
+     align-content: center;
+margin-top: 0 auto;
+margin-top: 15px;
+
+}
+
+.productIntroBanner {
+
+    text-align: center;
+    margin-top: 50px;
+    color: rgb(70, 69, 69);
+    font-size: 30px;
+}
+
+.productIntroBanner span {
+
+    font-weight: 600;
+    color: black;
+}
+
+.tagline {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}

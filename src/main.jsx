@@ -6,6 +6,8 @@ import ContactUsPage from "./Components/ContactUsPage";
 import Consultation from "./Components/ConsultationForm";
 import WholesaleInquiriesForm from "./Components/WholesaleInquiriesForm";
 import ProductsPage from "./Components/ProductsPage";
+import AboutUs from "./Components/AboutUs.jsx";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -16,6 +18,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/wholesale" element={<WholesaleInquiriesForm />} />
         <Route path="/products" element={<ProductsPage />} />
+          <Route path="/about" element={<AboutUs/>} />
+
       </Routes>
     </BrowserRouter>
   </StrictMode>
