@@ -1,7 +1,7 @@
 import React from "react";
 import Die from "./ProductsPage";
 import SubHeader from "./SubHeader";
-import "./productsPage.css"
+import "./productsPage.css";
 import TurnstoneLDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/GTBlackTurnstoneLDesk.jpg";
 import DomesDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/DomestoLDesk.jpg";
 import LDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/LShapedDesk.jpg";
@@ -12,110 +12,105 @@ import LedChandalierLight from "../assets/CategoryFurniture/ExecutiveOfficeLight
 import ModernLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/ModernPendanLight.jpg";
 import SixteenFeetLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/SixteenFTLedLinearLight.jpg";
 import ThreeRingsLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/ThreeRingsBlackPendantLight.jpg";
-import  ArtistHandReceptionChair from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/ArtisthandOfficeReceptionChair.jpg";
+import ArtistHandReceptionChair from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/ArtisthandOfficeReceptionChair.jpg";
 import KinfantRoomBench from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/KinfantWaitingRoomBench.jpg";
 import OmyReceptionArea from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/OmyWaitingRoom.jpg";
 import SetOfTwoBlackChairs from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/SetOfTwoReceptionBlackChairs.jpg";
 import TwoGrayReceptionChairs from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/TwoSeatGrayReceptionChairs.jpg";
 // import { useState } from "react";
 
-
 const furnitureItems = [
-    {
+  {
     id: 1,
     imageURL: TurnstoneLDesk,
     name: "GTB Black Turnstone L Desk",
-    price: 1299.00,
-
-    },
-    {
-        id: 2,
-        imageURL: DomesDesk,
-        name: "Domes to L Desk",
-        price: 799.00
-    },
-    {
-        id: 3,
-        imageURL: LDesk,
-        name: "L-Shaped Desk",
-        price: 1599.00
-    },
-    {
-        id: 4,
-        imageURL: NuipenDesk,
-        name: "Nuipens Desk",
-        price: 1699.00
-    },
-    {
-        id: 5,
-        imageURL: TribalDesk,
-        name: "Tribal Design Desk",
-        price: 2199.00
-    },
-    {
-        id: 6,
-        imageURL: WDimmableLight,
-        name: "18W Dimmable Black Light",
-        price: 1999.00
-    },
-    {
-        id: 7,
-        imageURL: LedChandalierLight,
-        name: "LED Chandelier",
-        price: 2599.00
-    },
-    {
-        id: 8,
-        imageURL: ModernLight,
-        name: "Modern Pendant Light",
-        price: 1399.00
-    },
-    {
-        id: 9,
-        imageURL: SixteenFeetLight,
-        name: "16Ft Led Linear Light",
-        price: 3299.00
-    },
-    {
-        id: 10,
-        imageURL: ThreeRingsLight,
-        name: "3 Rings Black Pendant Light",
-        price: 2699.00
-    },
-    {
-        id: 11,
-        imageURL: ArtistHandReceptionChair,
-        name: "Artist Hand Office Reception Chair",
-        price: 1899.00
-    },
-    {
-        id: 12,
-        imageURL: KinfantRoomBench,
-        name: "Kinfant Waiting Room Bench",
-        price: 999.00
-    },
-    {
-        id: 13,
-        imageURL: OmyReceptionArea,
-        name: "Omy Waiting Room",
-        price: 1699.00
-    },
-    {
-        id: 14,
-        imageURL: SetOfTwoBlackChairs,
-        name: "Barcelona Reception Black Chairs",
-        price: 2199.00
-    },
-    {
-        id: 15,
-        imageURL: TwoGrayReceptionChairs,
-        name: "Lucy Moran Gray Chairs",
-        price: 699.00
-    }
-  
-]
-
-
+    price: 1299.0,
+  },
+  {
+    id: 2,
+    imageURL: DomesDesk,
+    name: "Domes to L Desk",
+    price: 799.0,
+  },
+  {
+    id: 3,
+    imageURL: LDesk,
+    name: "L-Shaped Desk",
+    price: 1599.0,
+  },
+  {
+    id: 4,
+    imageURL: NuipenDesk,
+    name: "Nuipens Desk",
+    price: 1699.0,
+  },
+  {
+    id: 5,
+    imageURL: TribalDesk,
+    name: "Tribal Design Desk",
+    price: 2199.0,
+  },
+  {
+    id: 6,
+    imageURL: WDimmableLight,
+    name: "18W Dimmable Black Light",
+    price: 1999.0,
+  },
+  {
+    id: 7,
+    imageURL: LedChandalierLight,
+    name: "LED Chandelier",
+    price: 2599.0,
+  },
+  {
+    id: 8,
+    imageURL: ModernLight,
+    name: "Modern Pendant Light",
+    price: 1399.0,
+  },
+  {
+    id: 9,
+    imageURL: SixteenFeetLight,
+    name: "16Ft Led Linear Light",
+    price: 3299.0,
+  },
+  {
+    id: 10,
+    imageURL: ThreeRingsLight,
+    name: "3 Rings Black Pendant Light",
+    price: 2699.0,
+  },
+  {
+    id: 11,
+    imageURL: ArtistHandReceptionChair,
+    name: "Artist Hand Office Reception Chair",
+    price: 1899.0,
+  },
+  {
+    id: 12,
+    imageURL: KinfantRoomBench,
+    name: "Kinfant Waiting Room Bench",
+    price: 999.0,
+  },
+  {
+    id: 13,
+    imageURL: OmyReceptionArea,
+    name: "Omy Waiting Room",
+    price: 1699.0,
+  },
+  {
+    id: 14,
+    imageURL: SetOfTwoBlackChairs,
+    name: "Barcelona Reception Black Chairs",
+    price: 2199.0,
+  },
+  {
+    id: 15,
+    imageURL: TwoGrayReceptionChairs,
+    name: "Lucy Moran Gray Chairs",
+    price: 699.0,
+  },
+];
 
 export default function ProductsPage() {
   return (
@@ -124,12 +119,22 @@ export default function ProductsPage() {
       <div className="discountBanner">
         <p>CLIENTS SAVE 25% WITH VOUCHER</p>
       </div>
-       
+
       <div className="productIntroBanner">
-       <span>Executive </span>Furnishings Collection
-      
+        <span>Executive </span>Furnishings Collection
       </div>
-       <p className="tagline">Luxury you can feel. Quality you can trust.</p>
+      <p className="tagline">Luxury you can feel. Quality you can trust.</p>
+
+      <div className="catalogDisplayContainer">
+        {furnitureItems.map((furniture, index) => (
+          <div key={index}>
+            <img src={furniture.imageURL} className="furnitureImage" />
+            <div className="furnitureName">
+              {furniture.name && <span>{furniture.name}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
@@ -161,10 +166,6 @@ export default function ProductsPage() {
 // ProductsPage reads that URL parameter to know which category was clicked
 // ProductsPage filters the products array to display only items from that category
 // The URL is the route path that shows in the browser address bar
-
-
-
-
 
 // EXAMPLE OF URL CONNECTION:
 // In CategoryNav component:
