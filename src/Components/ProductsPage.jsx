@@ -18,6 +18,8 @@ import OmyReceptionArea from "../assets/CategoryFurniture/ExecutiveReceptionFurn
 import SetOfTwoBlackChairs from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/SetOfTwoReceptionBlackChairs.jpg";
 import TwoGrayReceptionChairs from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/TwoSeatGrayReceptionChairs.jpg";
 import { useState } from "react";
+import { useParams } from "react-router";
+import { useEffect } from "react";
 
 const furnitureItems = [
   {
@@ -25,117 +27,121 @@ const furnitureItems = [
     imageURL: TurnstoneLDesk,
     name: "GTB Black Turnstone L Desk",
     price: 1299.0,
-    category: "Desks"
+    category: "Desks",
   },
   {
     id: 2,
     imageURL: DomesDesk,
     name: "Domes to L Desk",
     price: 799.0,
-    category: "Desks"
+    category: "Desks",
   },
   {
     id: 3,
     imageURL: LDesk,
     name: "L-Shaped Desk",
     price: 1599.0,
-    category: "Desks"
+    category: "Desks",
   },
   {
     id: 4,
     imageURL: NuipenDesk,
     name: "Nuipens Desk",
     price: 1699.0,
-    category: "Desks"
+    category: "Desks",
   },
   {
     id: 5,
     imageURL: TribalDesk,
     name: "Tribal Design Desk",
     price: 2199.0,
-    category: "Desks"
+    category: "Desks",
   },
   {
     id: 6,
     imageURL: WDimmableLight,
     name: "18W Dimmable Black Light",
     price: 1999.0,
-    category: "Lights"
+    category: "Lights",
   },
   {
     id: 7,
     imageURL: LedChandalierLight,
     name: "LED Chandelier",
     price: 2599.0,
-    category: "Lights"
+    category: "Lights",
   },
   {
     id: 8,
     imageURL: ModernLight,
     name: "Modern Pendant Light",
     price: 1399.0,
-    category: "Lights"
+    category: "Lights",
   },
   {
     id: 9,
     imageURL: SixteenFeetLight,
     name: "16Ft Led Linear Light",
     price: 3299.0,
-    category: "Lights"
+    category: "Lights",
   },
   {
     id: 10,
     imageURL: ThreeRingsLight,
     name: "3 Rings Black Pendant Light",
     price: 2699.0,
-    category: "Lights"
+    category: "Lights",
   },
   {
     id: 11,
     imageURL: ArtistHandReceptionChair,
     name: "Artist Hand Office Reception Chair",
     price: 1899.0,
-    category: "Chairs"
+    category: "Chairs",
   },
   {
     id: 12,
     imageURL: KinfantRoomBench,
     name: "Kinfant Waiting Room Bench",
     price: 999.0,
-    category: "Chairs"
+    category: "Chairs",
   },
   {
     id: 13,
     imageURL: OmyReceptionArea,
     name: "Omy Waiting Room",
     price: 1699.0,
-    category: "Chairs"
+    category: "Chairs",
   },
   {
     id: 14,
     imageURL: SetOfTwoBlackChairs,
     name: "Barcelona Reception Black Chairs",
     price: 2199.0,
-    category: "Chairs"
+    category: "Chairs",
   },
   {
     id: 15,
     imageURL: TwoGrayReceptionChairs,
     name: "Lucy Moran Gray Chairs",
     price: 699.0,
-    category: "Chairs"
+    category: "Chairs",
   },
 ];
 
 export default function ProductsPage() {
+  const { category } = useParams();
+
   const [searchFurniture, setSearchFurniture] = useState("all");
 
-  const pickedFurnitureItems = furnitureItems.filter((furniture) => {
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setSearchFurniture(category ? category : "all");
+  }, [category]);
 
-
-     searchFurniture === "all" ? furniture.category
-
-  });
+  const pickedFurnitureItems = furnitureItems.filter((furniture) =>
+    searchFurniture === "all" ? true : furniture.category === searchFurniture
+  );
 
   return (
     <>
@@ -150,15 +156,13 @@ export default function ProductsPage() {
       <p className="tagline">Luxury you can feel. Quality you can trust.</p>
 
       <div className="catalogDisplayContainer">
-        {furnitureItems.map((furniture, index) => (
+        {pickedFurnitureItems.map((furniture, index) => (
           <div key={index}>
             <img src={furniture.imageURL} className="furnitureImage" />
             <div className="furnitureName">
               {furniture.name && <span>{furniture.name}</span>}
             </div>
-            <div className="furniturePrice">
-                {furniture.price}
-            </div>
+            <div className="furniturePrice">{furniture.price}</div>
           </div>
         ))}
       </div>
