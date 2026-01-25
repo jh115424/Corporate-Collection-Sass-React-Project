@@ -20,108 +20,109 @@ import TwoGrayReceptionChairs from "../assets/CategoryFurniture/ExecutiveRecepti
 import { useState } from "react";
 import { useParams } from "react-router";
 import { useEffect } from "react";
+import { Link } from "react-router";
 
 const furnitureItems = [
   {
-    id: 1,
+    // id: 1,
     imageURL: TurnstoneLDesk,
     name: "GTB Black Turnstone L Desk",
     price: 1299.0,
     category: "Desks",
   },
   {
-    id: 2,
+    // id: 2,
     imageURL: DomesDesk,
     name: "Domes to L Desk",
     price: 799.0,
     category: "Desks",
   },
   {
-    id: 3,
+    // id: 3,
     imageURL: LDesk,
     name: "L-Shaped Desk",
     price: 1599.0,
     category: "Desks",
   },
   {
-    id: 4,
+    // id: 4,
     imageURL: NuipenDesk,
     name: "Nuipens Desk",
     price: 1699.0,
     category: "Desks",
   },
   {
-    id: 5,
+    // id: 5,
     imageURL: TribalDesk,
     name: "Tribal Design Desk",
     price: 2199.0,
     category: "Desks",
   },
   {
-    id: 6,
+    // id: 6,
     imageURL: WDimmableLight,
     name: "18W Dimmable Black Light",
     price: 1999.0,
     category: "Lights",
   },
   {
-    id: 7,
+    // id: 7,
     imageURL: LedChandalierLight,
     name: "LED Chandelier",
     price: 2599.0,
     category: "Lights",
   },
   {
-    id: 8,
+    // id: 8,
     imageURL: ModernLight,
     name: "Modern Pendant Light",
     price: 1399.0,
     category: "Lights",
   },
   {
-    id: 9,
+    // id: 9,
     imageURL: SixteenFeetLight,
     name: "16Ft Led Linear Light",
     price: 3299.0,
     category: "Lights",
   },
   {
-    id: 10,
+    // id: 10,
     imageURL: ThreeRingsLight,
     name: "3 Rings Black Pendant Light",
     price: 2699.0,
     category: "Lights",
   },
   {
-    id: 11,
+    // id: 11,
     imageURL: ArtistHandReceptionChair,
     name: "Artist Hand Office Reception Chair",
     price: 1899.0,
     category: "Chairs",
   },
   {
-    id: 12,
+    // id: 12,
     imageURL: KinfantRoomBench,
     name: "Kinfant Waiting Room Bench",
     price: 999.0,
     category: "Chairs",
   },
   {
-    id: 13,
+    // id: 13,
     imageURL: OmyReceptionArea,
     name: "Omy Waiting Room",
     price: 1699.0,
     category: "Chairs",
   },
   {
-    id: 14,
+    // id: 14,
     imageURL: SetOfTwoBlackChairs,
     name: "Barcelona Reception Black Chairs",
     price: 2199.0,
     category: "Chairs",
   },
   {
-    id: 15,
+    // id: 15,
     imageURL: TwoGrayReceptionChairs,
     name: "Lucy Moran Gray Chairs",
     price: 699.0,
@@ -134,6 +135,8 @@ export default function ProductsPage() {
 
   const [searchFurniture, setSearchFurniture] = useState("all");
 
+  const [sortFurniture, setSortFurniture] = useState("");
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSearchFurniture(category ? category : "all");
@@ -142,6 +145,15 @@ export default function ProductsPage() {
   const pickedFurnitureItems = furnitureItems.filter((furniture) =>
     searchFurniture === "all" ? true : furniture.category === searchFurniture
   );
+
+  const sortedItems =
+    sortFurniture === ""
+      ? pickedFurnitureItems
+      : sortFurniture === "price-low-to-high"
+      ? [...pickedFurnitureItems].sort((a, b) => a.price - b.price)
+      : sortFurniture === "name-a-to-z"
+      ? [...pickedFurnitureItems].sort((a, b) => a.name.localeCompare(b.name))
+      : pickedFurnitureItems;
 
   return (
     <>
@@ -155,14 +167,30 @@ export default function ProductsPage() {
       </div>
       <p className="tagline">Luxury you can feel. Quality you can trust.</p>
 
+      <div className="sortDropdown">
+        <select
+          id="dropDown"
+          value={sortFurniture}
+          onChange={(event) => setSortFurniture(event.target.value)}
+        >
+          <option value="">Sort By</option>
+          <option value="price-low-to-high">Price: Low to High</option>
+          <option value="name-a-to-z">Name: A to Z</option>
+        </select>
+      </div>
+
       <div className="catalogDisplayContainer">
-        {pickedFurnitureItems.map((furniture, index) => (
+        {sortedItems.map((furniture, index) => (
           <div key={index}>
             <img src={furniture.imageURL} className="furnitureImage" />
             <div className="furnitureName">
               {furniture.name && <span>{furniture.name}</span>}
             </div>
             <div className="furniturePrice">{furniture.price}</div>
+
+            <Link to="/cart">
+            <button className="putInCart">Add to Cart</button>
+            </Link>
           </div>
         ))}
       </div>
@@ -170,41 +198,16 @@ export default function ProductsPage() {
   );
 }
 
-// CATEGORYNAV COMPONENT (GOES ON HOME PAGE):
-
-// Categories array with Desks, Chairs, Lighting
-// Map function to loop through them
-// Link components for navigation
-// Displays category buttons/cards
-// The buttons ARE NOT a separate component - they're CREATED INSIDE CategoryNav by the map function
-// Purpose: Let users choose a category and navigate to Products page
-
-// PRODUCTSPAGE COMPONENT (IS ITS OWN PAGE/ROUTE):
-
-// The actual furniture items array with images, names, prices
-// Map function to display all the furniture
-// Product cards showing image, description, price
-// Purpose: Display the actual furniture products
-
-// CATEGORYNAV = NAVIGATION ON HOME (CREATES THE BUTTONS)
-// PRODUCTSPAGE = ACTUAL PRODUCTS DISPLAYED
-// YOU DON'T NEED A SEPARATE BUTTONS COMPONENT - CATEGORYNAV MAKES THE BUTTONS
-
-// NEW INFO - HOW THEY CONNECT:
-
-// CategoryNav buttons use Link with "to" prop that navigates to the ProductsPage route (like "/products")
-// The Link can pass category information through the URL (like "/products/desks" or "/products?category=desks")
-// ProductsPage reads that URL parameter to know which category was clicked
-// ProductsPage filters the products array to display only items from that category
-// The URL is the route path that shows in the browser address bar
-
-// EXAMPLE OF URL CONNECTION:
-// In CategoryNav component:
-// jsx<Link to="/products/desks">Desks</Link>
-// In main.jsx router:
-// jsx<Route path="/products/:category" element={<ProductsPage />} />
-// ```
-
-// **The URL in browser would be:**
-// ```
-// yoursite.com/products/desks
+// SHOPPING CART IMPLEMENTATION - COMPLETE BREAKDOWN:
+// STEP 1 - CREATE CART STATE (IN APP.JSX OR CONTEXT):
+// Create useState to hold cart items array - this needs to be accessible by multiple components
+// STEP 2 - ADD TO CART BUTTONS (IN PRODUCTSPAGE):
+// On each product card (in the map), add an "Add to Cart" button that adds that product to the cart state
+// STEP 3 - CREATE CART PAGE COMPONENT (NEW FILE):
+// Make a new CartPage.jsx component that displays all items in the cart with their details
+// STEP 4 - ADD CART ROUTE (IN MAIN.JSX):
+// Add a route for /cart that shows the CartPage component
+// STEP 5 - CART ICON IN SUBHEADER (IN SUBHEADER.JSX):
+// Add a shopping cart icon/button that shows cart item count and links to /cart
+// STEP 6 - REMOVE FROM CART (IN CARTPAGE):
+// Add remove buttons on each cart item that delete them from cart state

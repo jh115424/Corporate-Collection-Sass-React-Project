@@ -1,0 +1,19 @@
+.shoppingCartContainer {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
+.imageAndCartContainer img {
+  width: 300px;
+  margin-left: 20px;
+  height: 200px;
+  border-radius: 7px;
+}
+.cartBasketSection {
+  width: 25%;
+
+  border: 2px dashed black; 
+  min-height: 500px;
+  margin-right: 20px;
+}

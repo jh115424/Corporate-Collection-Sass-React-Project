@@ -14,6 +14,16 @@ export default function SubHeader() {
           </div>
         </Link>
         <div className="productsTopMenuLeft">
+          <div className="gettingStartedAndDemoSection">
+            <Link to="/wholesale">
+              <button className="wholesaleButton">Wholesale Inquiries</button>
+            </Link>
+            <Link to="/consultation">
+              <button className="schedulingButton">
+                Schedule a Consultation{" "}
+              </button>
+            </Link>
+          </div>
           <Link to="/products">
             <button className="productsButton">Products</button>
           </Link>

@@ -52,3 +52,13 @@
 .furniturePrice {
   display: flex;
 }
+
+.putInCart {
+
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 300px;
+    background-color: black;
+    color: white;
+    
+}

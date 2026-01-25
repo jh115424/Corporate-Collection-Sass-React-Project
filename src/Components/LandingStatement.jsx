@@ -2,7 +2,7 @@ import React from "react";
 import "./landingStatement.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router";
+
 
 import SubHeader from "./SubHeader";
 
@@ -39,14 +39,7 @@ export default function TopHeader() {
         Transform your office into the competitive edge your executive vision
         demands
       </p>
-      <div className="gettingStartedAndDemoSection">
-        <Link to="/wholesale">
-          <button className="wholesaleButton">Wholesale Inquiries</button>
-        </Link>
-        <Link to="/consultation">
-          <button className="schedulingButton">Schedule a Consultation </button>
-        </Link>
-      </div>
+
     </>
   );
 }

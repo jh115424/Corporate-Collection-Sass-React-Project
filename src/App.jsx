@@ -6,16 +6,20 @@ import CompanyCarousel from "./Components/CompanyCarousel";
 import StatsSection from "./Components/StatsSection";
 import FurnitureSlab from "./Components/FurnitureSlab";
 import Footer from "./Components/Footer";
-
-
+import CategoryNavigation from "./Components/CategoryNavigation";
+import CartPage from "./Components/CartPage";
 
 function App() {
+  // const [cart, setCart] = useState([])
   return (
-    <div style={{position: 'relative', zIndex: 10, backgroundColor: 'white'}}>
+    <div style={{ position: "relative", zIndex: 10, backgroundColor: "white" }}>
       <TopHeader />
       <SubHeader />
+    
       <LandingStatement />
+  <CategoryNavigation />
       <LandingPageTopImage />
+      <CartPage />
       <CompanyCarousel />
       <StatsSection />
       <FurnitureSlab />
@@ -27,10 +31,4 @@ function App() {
   );
 }
 
-
-
 export default App;
-
-
-
-

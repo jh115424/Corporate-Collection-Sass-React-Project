@@ -63,13 +63,18 @@ z-index: 10;
 }
 
 .productsButton,
-.productsTopMenuLeft {
+.productsTopMenuLeft,
+.wholesaleButton
+{
   margin-left: auto;
 }
 
 .contactButton,
 .productsButton,
-.productsTopMenuLeft p {
+.schedulingButton,
+.wholesaleButton,
+.productsTopMenuLeft
+ p {
   padding: 8px 16px;
   border-radius: 30px;
   transition: background-color 0.3s ease;
@@ -77,6 +82,12 @@ z-index: 10;
 
 .contactButton,
 .productsButton,
+.wholesaleButton,
+.schedulingButton
 .productsTopMenuLeft p:hover {
   background-color: rgb(227 230 231 / 90%);
+}
+.wholesaleButton {
+  background-color: black;
+  color: white;
 }

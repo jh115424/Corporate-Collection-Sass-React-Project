@@ -3,8 +3,6 @@ import "./companyCarousel.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
-
-
 const company = [
   {
     logo: "https://cdn.brandfetch.io/id7L59h6d0/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
@@ -36,20 +34,20 @@ const company = [
 export default function CompanyCarousel() {
   const [position, setPosition] = useState(0);
 
-//   useEffect(() => {
-//     const nameInterval = setInterval(() => {
-//       setPosition((prevPosition) => {
-//         const newPosition = prevPosition - 2;
+  useEffect(() => {
+    const nameInterval = setInterval(() => {
+      setPosition((prevPosition) => {
+        const newPosition = prevPosition - 2;
 
-//         if (newPosition < -1500) {
-//           return 0;
-//         } else {
-//           return newPosition;
-//         }
-//       });
-//     }, 25);
-//     return () => clearInterval(nameInterval);
-//   }, []);
+        if (newPosition < -1500) {
+          return 0;
+        } else {
+          return newPosition;
+        }
+      });
+    }, 25);
+    return () => clearInterval(nameInterval);
+  }, []);
 
   return (
     <>
@@ -71,7 +69,6 @@ export default function CompanyCarousel() {
           </div>
         ))}
       </div>
-   
     </>
   );
 }

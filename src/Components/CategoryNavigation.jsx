@@ -1,14 +1,32 @@
 import React from "react";
 import "./categoryNavigation.css";
-import 
+import { Link } from "react-router";
+import { Route } from "react-router-dom";
 
+export default function CategoryNavigation() {
+  const furnitureCategory = [
+    { name: "Desks" },
+    { name: "Chairs" },
+    { name: "Lighting" },
+  ];
 
-
-
-
-
-
-
+  return (
+    <>
+      <div className="underline"></div>
+      <div className="productPageButtonContainer">
+        {furnitureCategory.map((category, index) => (
+          <Link
+            key={index}
+            to={"/products/" + category.name}
+            className="categoryLink"
+          >
+            {category.name}
+          </Link>
+        ))}
+      </div>
+    </>
+  );
+}
 
 // COMPLETE DETAILED STEPS FOR PRODUCT CATEGORIES COMPONENT:
 // STEP 1: Import Link from react-router-dom at the very top of the file
@@ -18,8 +36,6 @@ import
 // STEP 5: For each category in the map, create a Link component that wraps around a div or card element - the Link's "to" prop should navigate to the Products page
 // STEP 6: Inside each Link, display the category information - show the category name from the object
 // STEP 7: Give each mapped item a unique key prop - use the index from map
-
-
 
 // CATEGORYNAV COMPONENT (GOES ON HOME PAGE):
 
