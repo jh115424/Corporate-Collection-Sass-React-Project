@@ -7,10 +7,15 @@ export default function CartPage() {
   return (
     <>
       <SubHeader />
+      <p className="yourCart">Your Shopping Cart</p>
+      {/* <div className="line"></div> */}
+      <div className="basketTitle">
+        <p>Nuipen Collection</p>
+      </div>
       <div className="shoppingCartContainer">
         <div className="imageAndCartContainer">
           <img src={image2} alt="test-image" />
-          {/* test image above */}
+          {/* mockup image above */}
         </div>
         <div className="cartBasketSection"></div>
       </div>

@@ -7,7 +7,7 @@ import StatsSection from "./Components/StatsSection";
 import FurnitureSlab from "./Components/FurnitureSlab";
 import Footer from "./Components/Footer";
 import CategoryNavigation from "./Components/CategoryNavigation";
-import CartPage from "./Components/CartPage";
+
 
 function App() {
   // const [cart, setCart] = useState([])
@@ -19,7 +19,6 @@ function App() {
       <LandingStatement />
   <CategoryNavigation />
       <LandingPageTopImage />
-      <CartPage />
       <CompanyCarousel />
       <StatsSection />
       <FurnitureSlab />
