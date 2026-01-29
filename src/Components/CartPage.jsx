@@ -78,13 +78,17 @@ export default function CartPage() {
             <p className="cartTitle">Nuipen Collection</p>
             <div className="cartBasketSection">
               <p>
-                Member Price: <span>1234 </span>
+                Regular Price <span>PlaceHolderPrice 3000</span>
               </p>
               <p>
-                Member Voucher: <span>123</span>
+                Member Price: <span>PlaceHolderPrice 1234 </span>
+              </p>
+              <p>
+                Member Voucher: <span>PlaceHolderPrice 123</span>
               </p>
               {/* Other cart basket content */}
             </div>
+            <p className="cartDisclaimer">Excludes delivery, membership fee</p>
           </div>
         </div>
       )}
@@ -93,7 +97,8 @@ export default function CartPage() {
         <div className="emptyCartMessage">
           {productRemove && (
             <div className="productRemoveMessage">
-              You removed *placeholder furniture* this desk from your cart.
+              <span> *Placeholder furniture* </span>{" "}
+              <span className="removeColorChange">removed from your cart</span>.
             </div>
           )}
           <p>{message}</p>
@@ -103,7 +108,7 @@ export default function CartPage() {
           </Link>
         </div>
       )}
-      <div>
+      <div className="testCartButton">
         <button onClick={tempUndoCart}>Bring Back Cart</button>
       </div>
     </>
