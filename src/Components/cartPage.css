@@ -1,7 +1,10 @@
 .shoppingCartContainer {
   display: flex;
   margin-top: 50px;
-  justify-content: space-evenly;
+  margin-left: 50px;
+  margin-right: 50px;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .yourCart {
@@ -9,6 +12,22 @@
   margin-left: 50px;
   font-size: 30px;
   color: blue;
+}
+
+.cartBasketSection {
+  border: dotted;
+  height: 400px;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  flex-direction: column; 
+  line-height: 0.6;
+  align-items: center;
+  
+}
+
+.cartBasketSection span {
+    margin-left: 50px;
+   
 }
 
 .line {
@@ -23,12 +42,23 @@
 
 .basketTitle {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-left: 300px;
 
   width: 160px;
   font-size: 20px;
   background-color: gold;
+}
+
+.cartTitle {
+  height: 30px;
+  margin-left: 500px;
+  margin-left: -30px;
+  text-align: center;
+  border-radius: 4px;
+  width: 275px;
+  font-size: 22px;
+  background-color: rgb(117, 219, 117);
 }
 
 .imageAndCartContainer img {
@@ -37,10 +67,75 @@
   height: 200px;
   border-radius: 7px;
 }
-.cartBasketSection {
-  width: 25%;
 
-  border: 2px dashed black;
-  min-height: 500px;
-  margin-right: 20px;
+.productRemove {
+  display: flex;
+  margin-left: 75px;
+  cursor: pointer;
+}
+.titleAndImage > div {
+  display: flex;
+  gap: 20px;
+}
+
+.colorName {
+  display: flex;
+  justify-content: space-between;
+  gap: 180px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.titleAndImage {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter h1 {
+  font-size: 14px;
+}
+
+.counter {
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.minus,
+.plus {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.rightSide {
+  width: 500px;
+}
+
+.productImage {
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.salePrice,
+.color {
+  font-size: 15px;
+}
+.emptyCartMessage {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  margin-left: 150px;
+
+  font-size: 28px;
+}
+
+.backToProductPage {
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  height: 40px;
+  width: 160px;
 }
