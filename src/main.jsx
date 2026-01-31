@@ -8,6 +8,7 @@ import WholesaleInquiriesForm from "./Components/WholesaleInquiriesForm";
 import ProductsPage from "./Components/ProductsPage";
 import AboutUs from "./Components/AboutUs.jsx";
 import CartPage from "./Components/CartPage.jsx"
+import CheckoutPage from "./Components/CheckoutPage.jsx";
 
 
 createRoot(document.getElementById("root")).render(
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:category" element={<ProductsPage />} />
             <Route path="/cart" element={<CartPage/>} />
+<Route path="checkoutPage" element={<CheckoutPage/>} />
           <Route path="/about" element={<AboutUs/>} />
 
 

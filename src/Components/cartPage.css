@@ -2,7 +2,7 @@
   display: flex;
   margin-top: 100px;
   margin-left: 50px;
-
+  align-items: center;
   justify-content: space-between;
   flex-direction: row;
 }
@@ -17,7 +17,8 @@
 .cartBasketSection p {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  /* width: 70%; */
+  gap: 100px;
 }
 
 .cartBasketSection span {
@@ -25,7 +26,10 @@
 }
 
 .cartDisclaimer {
-  margin-left: 9%;
+  /* margin-left: 9%; */
+  display: flex;
+  justify-content: center;
+  font-size: 8px;
 }
 
 .line {
@@ -106,7 +110,8 @@
 }
 
 .rightSide {
-  width: 500px;
+  /* width: 500px; */
+  margin-right: 100px;
 }
 
 .productImage {
@@ -159,4 +164,20 @@
 
 .removeColorChange {
   color: rgb(124, 120, 120);
+}
+
+.checkoutButton {
+  width: 100%;
+  background: #333;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 10px 30px;
+  border-radius: 0;
+  text-transform: uppercase;
+
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
 }

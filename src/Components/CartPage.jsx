@@ -75,7 +75,7 @@ export default function CartPage() {
           </div>
 
           <div className="rightSide">
-            <p className="cartTitle">Nuipen Collection</p>
+            {/* <p className="cartTitle">Nuipen Collection</p> */}
             <div className="cartBasketSection">
               <p>
                 Regular Price <span>PlaceHolderPrice 3000</span>
@@ -89,6 +89,9 @@ export default function CartPage() {
               {/* Other cart basket content */}
             </div>
             <p className="cartDisclaimer">Excludes delivery, membership fee</p>
+            <Link to="/checkoutPage">
+              <button className="checkoutButton">CHECKOUT</button>
+            </Link>
           </div>
         </div>
       )}
