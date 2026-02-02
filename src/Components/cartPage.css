@@ -7,6 +7,21 @@
   flex-direction: row;
 }
 
+.dividerLine,
+.dividerLineBottom {
+  width: 50%;
+
+  background: rgb(156, 153, 153);
+  height: 2px;
+}
+
+.dividerLineBottom {
+  margin-left: 50px;
+  width: 50%;
+  height: 1px;
+  background: rgb(156, 153, 153);
+}
+
 .yourCart {
   margin-top: 50px;
   margin-left: 50px;
@@ -17,7 +32,7 @@
 .cartBasketSection p {
   display: flex;
   justify-content: space-between;
-  /* width: 70%; */
+
   gap: 100px;
 }
 
@@ -26,7 +41,6 @@
 }
 
 .cartDisclaimer {
-  /* margin-left: 9%; */
   display: flex;
   justify-content: center;
   font-size: 8px;
@@ -110,7 +124,6 @@
 }
 
 .rightSide {
-  /* width: 500px; */
   margin-right: 100px;
 }
 
@@ -180,4 +193,36 @@
   letter-spacing: 0.1em;
 
   cursor: pointer;
+}
+
+.emailButton {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.keepShopping {
+  background: none;
+  border: none;
+  font-size: 15px;
+  padding: 0;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.timeFrame {
+  font-size: small;
+  display: flex;
+  justify-content: center;
 }

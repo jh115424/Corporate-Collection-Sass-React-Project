@@ -1,6 +1,7 @@
 import React from "react";
 import Die from "./ProductsPage";
 import SubHeader from "./SubHeader";
+import { useNavigate } from "react-router";
 import "./productsPage.css";
 import TurnstoneLDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/GTBlackTurnstoneLDesk.jpg";
 import DomesDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/DomestoLDesk.jpg";
@@ -21,6 +22,7 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import { useEffect } from "react";
 import { Link } from "react-router";
+import CartPage from "./CartPage";
 
 const furnitureItems = [
   {
@@ -63,28 +65,28 @@ const furnitureItems = [
     imageURL: WDimmableLight,
     name: "18W Dimmable Black Light",
     price: 1999.0,
-    category: "Lights",
+    category: "Lighting",
   },
   {
     // id: 7,
     imageURL: LedChandalierLight,
     name: "LED Chandelier",
     price: 2599.0,
-    category: "Lights",
+    category: "Lighting",
   },
   {
     // id: 8,
     imageURL: ModernLight,
     name: "Modern Pendant Light",
     price: 1399.0,
-    category: "Lights",
+    category: "Lighting",
   },
   {
     // id: 9,
     imageURL: SixteenFeetLight,
     name: "16Ft Led Linear Light",
     price: 3299.0,
-    category: "Lights",
+    category: "Lighting",
   },
   {
     // id: 10,
@@ -130,7 +132,7 @@ const furnitureItems = [
   },
 ];
 
-export default function ProductsPage() {
+export default function ProductsPage({cart, setCart}) {
   const { category } = useParams();
 
   const [searchFurniture, setSearchFurniture] = useState("all");
@@ -155,6 +157,23 @@ export default function ProductsPage() {
       ? [...pickedFurnitureItems].sort((a, b) => a.name.localeCompare(b.name))
       : pickedFurnitureItems;
 
+      const navigate = useNavigate();
+
+ const handleAddToCart = (furniture) => {
+  const existingItem = cart.find(item => item.name === furniture.name);
+  if (existingItem) {
+    const updatedCart = cart.map(item =>
+      item.name === furniture.name
+        ? { ...item, quantity: (item.quantity || 1) + 1 }
+        : item
+    );
+    setCart(updatedCart);
+  } else {
+    setCart([...cart, { ...furniture, quantity: 1 }]);
+  }
+  console.log("Adding to cart:", furniture);
+  navigate("/cart");
+};
   return (
     <>
       <SubHeader />
@@ -188,9 +207,11 @@ export default function ProductsPage() {
             </div>
             <div className="furniturePrice">{furniture.price}</div>
 
-            <Link to="/cart">
-            <button className="putInCart">Add to Cart</button>
-            </Link>
+     
+             {/* <button className="putInCart">Add to Cart</button> */}
+
+            <button onClick={() => handleAddToCart(furniture) } className="putInCart">Add to Cart</button>
+      
           </div>
         ))}
       </div>

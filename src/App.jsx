@@ -10,7 +10,7 @@ import CategoryNavigation from "./Components/CategoryNavigation";
 
 
 function App() {
-  // const [cart, setCart] = useState([])
+
   return (
     <div style={{ position: "relative", zIndex: 10, backgroundColor: "white" }}>
       <TopHeader />
