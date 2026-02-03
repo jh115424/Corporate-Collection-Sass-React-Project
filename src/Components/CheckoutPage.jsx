@@ -3,22 +3,30 @@ import { Link } from "react-router";
 // import { useState } from "react";
 import { Route } from "react-router";
 import ProductsPage from "./ProductsPage";
-import SubHeader from "./SubHeader";
+import "./checkOutPage.css";
 
+import Footer from "./Footer";
 
-export default function CheckoutPage ({cart, setCart}) {
-
-
-
-    return(
+export default function CheckoutPage({ cart, setCart }) {
+  return (
     <>
-    <SubHeader />
-    <p>pizza</p>
+      <p className="title">FINALIZE YOUR ORDER - CHECKOUT</p>
+
+      <div className="checkoutContainer">
+        <div className="customerInfo">
+          <form class="checkout-form">
+            <input type="text" placeholder="Full Name" />
+            <input type="email" placeholder="Email" />
+            <input type="tel" placeholder="Phone" />
+            <button type="submit">Continue</button>
+          </form>
+        </div>
+
+        <div className="orderInformation"></div>
+      </div>
     </>
-    )
+  );
 }
-
-
 
 // STEP 1 - CREATE THE FILE:
 // Make a new file called CheckoutPage.jsx in your Components folder
@@ -41,3 +49,25 @@ export default function CheckoutPage ({cart, setCart}) {
 // STEP 10 - HANDLE EMPTY CART:
 // Add a check - if cart is empty, show a message saying "Your cart is empty" with a button to go back to products page
 // THAT'S ALL 10 STEPS FOR A COMPLETE CHECKOUT PAGE!
+
+// form for cust order email
+
+// LEFT SIDE:
+// A form where customers fill in their information - email address, full name, phone number, shipping address (street, city, state, zip code), and sometimes payment info
+// RIGHT SIDE:
+// Order summary showing all the items they're buying, quantities, prices, and the total amount they'll pay
+// WHY YOU NEED THE FORM:
+// Without collecting their email and shipping address, you can't complete an order! The form gathers all the information needed to process and ship their purchase
+// THE FORM FIELDS YOU'LL NEED:
+
+// Email address input
+// Full name input
+// Phone number input
+// Street address input
+// City input
+// State dropdown or input
+// Zip code input
+// Maybe a payment method selector (credit card, PayPal, etc)
+
+// AT THE BOTTOM:
+// A big "Place Order" or "Complete Purchase" button that submits the form

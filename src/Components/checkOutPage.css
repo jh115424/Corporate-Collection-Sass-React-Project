@@ -1,0 +1,30 @@
+body {
+  font-family: "Lora", serif;
+  background: linear-gradient(135deg, #e8ebef 0%, #dce1e8 100%);
+  color: #4a5568;
+  padding: 55px 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+}
+.checkoutContainer {
+  display: flex;
+  gap: 30px; /* ADD THIS LINE */
+  height: 500px;
+  width: 100%;
+}
+
+.customerInfo {
+  width: 60%;
+
+  background-color: white;
+  height: auto;
+}
+
+.orderInformation {
+  background-color: white;
+  width: 40%;
+  height: auto;
+}
