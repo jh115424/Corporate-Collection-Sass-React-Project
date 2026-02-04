@@ -15,9 +15,16 @@ export default function CheckoutPage({ cart, setCart }) {
       <div className="checkoutContainer">
         <div className="customerInfo">
           <form class="checkout-form">
+            <label htmlFor=""></label>
             <input type="text" placeholder="Full Name" />
+            
+            <label htmlFor=""></label>
             <input type="email" placeholder="Email" />
+
+            <label htmlFor=""></label>
             <input type="tel" placeholder="Phone" />
+
+            <label htmlFor=""></label>
             <button type="submit">Continue</button>
           </form>
         </div>
