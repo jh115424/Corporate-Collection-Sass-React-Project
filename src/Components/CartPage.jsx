@@ -118,7 +118,7 @@ export default function CartPage({ cart, setCart }) {
                     .reduce(
                       (total, item) =>
                         total + item.price * (item.quantity || 1),
-                      0
+                      0,
                     )
                     .toFixed(2)}
                 </span>
@@ -131,7 +131,7 @@ export default function CartPage({ cart, setCart }) {
                     cart.reduce(
                       (total, item) =>
                         total + item.price * (item.quantity || 1),
-                      0
+                      0,
                     ) * 0.75
                   ).toFixed(2)}
                 </span>
@@ -144,7 +144,7 @@ export default function CartPage({ cart, setCart }) {
                     cart.reduce(
                       (total, item) =>
                         total + item.price * (item.quantity || 1),
-                      0
+                      0,
                     ) * 0.25
                   ).toFixed(2)}
                 </span>

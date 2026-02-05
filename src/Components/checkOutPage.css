@@ -9,22 +9,115 @@ body {
   text-align: center;
   font-size: 24px;
 }
+
+.subTitle {
+  text-align: center;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  gap: 20px;
+  border: 2px #696b6e;
+
+  width: 80%;
+}
+
+.formUnderline {
+  border: none;
+  width: 100%;
+  /* Set height and background color to make the line visible */
+  height: 2px;
+  background-color: gray;
+  /* Add margins for spacing */
+  margin: 1.5rem 0;
+}
+
+.sectionHeader {
+  font-size: 24px;
+}
+.cardTypeBox {
+  height: 50px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.checkout-form input {
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgb(240, 239, 239);
+  border: 1.8px solid #c5cdd7;
+}
 .checkoutContainer {
   display: flex;
-  gap: 30px; /* ADD THIS LINE */
-  height: 500px;
+  gap: 30px;
+  min-height: 100vh; /* CHANGED FROM height: 500px */
   width: 100%;
 }
 
-.customerInfo {
-  width: 60%;
-
+.customerInfoAndDelivery {
+  width: 50%;
+  border-radius: 30px;
   background-color: white;
   height: auto;
+  padding-bottom: 100px;
 }
 
 .orderInformation {
   background-color: white;
+  border-radius: 30px;
   width: 40%;
   height: auto;
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px); /* ADD THIS */
+  overflow-y: auto; /* ADD THIS */
+}
+
+.textAreaBox {
+  height: 100px;
+}
+
+.orderInformation {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderFormHeader {
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.sendOrderButton {
+  margin-top: auto;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+
+  display: block;
+
+  width: 50%;
+  padding: 19px;
+  background: linear-gradient(135deg, #7a8fa5 0%, #5a6b7d 100%);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 6px 20px rgba(90, 107, 125, 0.22);
+}
+
+.sendOrderButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(90, 107, 125, 0.32);
 }

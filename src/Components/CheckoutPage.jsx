@@ -4,77 +4,276 @@ import { Link } from "react-router";
 import { Route } from "react-router";
 import ProductsPage from "./ProductsPage";
 import "./checkOutPage.css";
-
+import { useState } from "react";
 import Footer from "./Footer";
+import emailjs from "@emailjs/browser";
 
 export default function CheckoutPage({ cart, setCart }) {
+  const [companyEmail, setCompanyEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [businessName, setBusinessName] = useState("");
+  const [shippingAddress, setShippingAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [suiteOrFloor, setSuiteOrFloor] = useState("");
+  const [country, setCountry] = useState("");
+  const [cardType, setCardType] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [specialInstructions, setSpecialInstructions] = useState("");
+
+  const [orderTotal, setOrderTotal] = useState(0);
+  const [listOfItems, setListOfItems] = useState("");
+  const [dateAndTime, setDateAndTime] = useState("");
+
+  const [send, setIsSending] = useState(false);
+
+  const emailCompanyHandleClick = (e) => {
+    e.preventDefault();
+
+    setIsSending(true);
+
+    const serviceId = "service_8fxa1nn";
+    const templateId = "template_r3ycwdo";
+    const publicKey = "74BZsOVATORg5niqu";
+
+    const checkoutDataParams = {
+      firstName: firstName,
+      lastName: lastName,
+      phoneNumber: phoneNumber,
+      companyEmail: companyEmail,
+      businessName: businessName,
+      shippingAddress: shippingAddress,
+      suiteOrFloor: suiteOrFloor,
+      city: city,
+      state: state,
+      zipCode: zipCode,
+      country: country,
+      cardType: cardType,
+      cardNumber: cardNumber,
+      specialInstructions: specialInstructions,
+      orderTotal: orderTotal,
+      listOfItems: listOfItems,
+      dateAndTime: dateAndTime,
+    };
+
+    emailjs
+      .send(serviceId, templateId, checkoutDataParams, publicKey)
+      .then((response) => {
+        console.log(
+          "Order email sent successfully!",
+          response.status,
+          response.text,
+        );
+        alert("Order email sent successfully!");
+      })
+      .catch((error) => {
+        console.error("Failed to send order email", error);
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
   return (
     <>
       <p className="title">FINALIZE YOUR ORDER - CHECKOUT</p>
+      <p className="subTitle">
+        Secure Payment Processing • Complimentary White Glove Delivery
+      </p>
 
       <div className="checkoutContainer">
-        <div className="customerInfo">
+        <div className="customerInfoAndDelivery">
           <form class="checkout-form">
-            <label htmlFor=""></label>
-            <input type="text" placeholder="Full Name" />
-            
-            <label htmlFor=""></label>
-            <input type="email" placeholder="Email" />
+            <p className="sectionHeader">Customer Information</p>
+            <div className="formUnderline"></div>
+            <label htmlFor="email">EMAIL ADDRESS</label>
+            <input
+              id="email"
+              type="email"
+              value={companyEmail}
+              onChange={(e) => setCompanyEmail(e.target.value)}
+            />
 
-            <label htmlFor=""></label>
-            <input type="tel" placeholder="Phone" />
+            <label htmlFor="firstName">FIRST NAME</label>
+            <input
+              id="firstName"
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
 
-            <label htmlFor=""></label>
-            <button type="submit">Continue</button>
+            <label htmlFor="lastName">LAST NAME</label>
+            <input
+              id="lastName"
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+
+            <label htmlFor="phoneNUmber">PHONE NUMBER</label>
+            <input
+              id="phoneNumber"
+              type="tel"
+              value={phoneNumber}
+              onChange={(e) => {
+                // remove any character that is not 0-9 or dash
+                const filtered = e.target.value.replace(/[^0-9-]/g, "");
+                setPhoneNumber(filtered);
+              }}
+            />
+
+            <p className="sectionHeader">Delivery Address</p>
+            <div className="formUnderline"></div>
+
+            <label htmlFor="businessName">BUSINESS NAME (OPTIONAL)</label>
+            <input
+              id="businessName"
+              type="text"
+              value={businessName}
+              onChange={(e) => setBusinessName(e.target.value)}
+            />
+
+            <label htmlFor="shippingAddress">SHIPPING ADDRESS</label>
+            <input
+              id="shippingAddress"
+              type="text"
+              value={shippingAddress}
+              onChange={(e) => setShippingAddress(e.target.value)}
+            />
+
+            <label htmlFor="suiteOrFloor">SUITE/BUILDING/FLOOR</label>
+            <input
+              id="suiteOrFloor"
+              type="text"
+              value={suiteOrFloor}
+              onChange={(e) => setSuiteOrFloor(e.target.value)}
+            />
+
+            <label htmlFor="city">CITY</label>
+            <input
+              id="city"
+              type="text"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            />
+
+            <label htmlFor="state">STATE</label>
+            <input
+              id="state"
+              type="text"
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+            />
+
+            <label htmlFor="zipCode">ZIP CODE</label>
+            <input
+              id="zipCode"
+              type="text"
+              value={zipCode}
+              onChange={(e) => {
+                // remove any character that is not 0-9 or dash
+                const filtered = e.target.value.replace(/[^0-9-]/g, "");
+                setZipCode(filtered);
+              }}
+            />
+
+            <label htmlFor="country">COUNTRY</label>
+            <input
+              id="country"
+              type="text"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+            />
+
+            <p className="sectionHeader">Payment Method</p>
+            <label htmlFor="cardType">Payment Type</label>
+            <select
+              id="cardType"
+              value={cardType}
+              onChange={(e) => setCardType(e.target.value)}
+              className="cardTypeBox"
+            >
+              <option value="">Select Card</option>
+              <option value="Visa">Visa</option>
+              <option value="MasterCard">MasterCard</option>
+              <option value="Amex">Amex</option>
+              <option value="Discover">Discover</option>
+            </select>
+
+            <label htmlFor="cardNumber">ENTER CARD NUMBER</label>
+            <input
+              id="cardNumber"
+              type="text"
+              value={cardNumber}
+              onChange={(e) => {
+                // remove any character that is not 0-9 or dash
+                const filtered = e.target.value.replace(/[^0-9-]/g, "");
+                setCardNumber(filtered);
+              }}
+            />
+
+            <label htmlFor="specialInstructions">SPECIAL INSTRUCTIONS</label>
+            <textarea
+              id="specialInstructions"
+              type="text"
+              value={specialInstructions}
+              onChange={(e) => setSpecialInstructions(e.target.value)}
+              className="textAreaBox"
+            />
           </form>
         </div>
 
-        <div className="orderInformation"></div>
+        <div className="orderInformation">
+          <p className="orderFormHeader">Your Order</p>
+
+          <button
+            onClick={emailCompanyHandleClick}
+            disabled={send}
+            className="sendOrderButton"
+          >
+            {send ? "isSending..." : "Send Order Email"}
+          </button>
+        </div>
       </div>
     </>
   );
 }
 
-// STEP 1 - CREATE THE FILE:
-// Make a new file called CheckoutPage.jsx in your Components folder
-// STEP 2 - RECEIVE THE CART DATA:
-// At the top of CheckoutPage function, accept cart and setCart as props (same way CartPage does)
-// STEP 3 - CREATE THE PAGE LAYOUT:
-// The page needs three main sections - order summary at top, customer information form in middle, place order button at bottom
-// STEP 4 - ORDER SUMMARY SECTION:
-// Show a list of all items in the cart with their names, quantities, and individual prices. At the bottom of this section, show the total price
-// STEP 5 - CUSTOMER INFORMATION FORM:
-// Create input fields for customer to fill out: full name, email address, phone number, shipping address (street, city, state, zip code), and payment method selection (like credit card, PayPal)
-// STEP 6 - CREATE STATE FOR FORM INPUTS:
-// For each input field (name, email, phone, etc), create a useState that holds what the customer types
-// STEP 7 - CONNECT INPUTS TO STATE:
-// Each input field needs an onChange that updates its state when the customer types
-// STEP 8 - CREATE PLACE ORDER FUNCTION:
-// Make a function that runs when customer clicks "Place Order" button. This function should validate that all required fields are filled out, then show a confirmation message
-// STEP 9 - ADD SUBHEADER:
-// Import and add SubHeader at the top so it matches your other pages
-// STEP 10 - HANDLE EMPTY CART:
-// Add a check - if cart is empty, show a message saying "Your cart is empty" with a button to go back to products page
-// THAT'S ALL 10 STEPS FOR A COMPLETE CHECKOUT PAGE!
+// COMPLETE STEPS TO BUILD THE ORDER SUMMARY SIDE (LAYOUT 5 STYLE):
+// STEP 1 - MAP THROUGH CART ITEMS:
+// Between the "Your Order" header and the button, you need to loop through the cart array. For each item in the cart, display a section showing the product image, product name, quantity with color or specs, and the individual item price.
+// STEP 2 - ADD KEY ATTRIBUTE:
+// When you map through the cart items, each item's wrapper element needs a key attribute with the index so React can track each item properly.
+// STEP 3 - CREATE PRICING BREAKDOWN SECTION:
+// After the cart items loop and before the button, add a section that calculates and displays all the price information. This section shows subtotal (all items added together), member discount (25% off), white glove delivery status (free), sales tax calculation, and the final grand total.
+// STEP 4 - CALCULATE SUBTOTAL:
+// Use the reduce method on the cart array to add up all item prices multiplied by their quantities. This gives you the total before any discounts or taxes.
+// STEP 5 - CALCULATE MEMBER DISCOUNT:
+// Multiply the subtotal by 0.25 to get the 25% discount amount. Display this as a negative number in green to show savings.
+// STEP 6 - CALCULATE TAX:
+// Multiply the subtotal (after discount is applied) by your tax rate. Most states use between 6% to 10% sales tax.
+// STEP 7 - CALCULATE FINAL TOTAL:
+// Take the subtotal, subtract the discount, add the tax. This is the final amount customers pay.
+// STEP 8 - ADD SECURITY BADGE (OPTIONAL):
+// Below the button, add a small text line with a lock icon saying the payment is secure and encrypted.
+// STEP 9 - ADD SERVICE BENEFITS BOX (OPTIONAL):
+// At the very bottom, add a highlighted box listing the premium services included like installation, guarantee period, and support team.
 
-// form for cust order email
+// WHAT'S THE SAME:
 
-// LEFT SIDE:
-// A form where customers fill in their information - email address, full name, phone number, shipping address (street, city, state, zip code), and sometimes payment info
-// RIGHT SIDE:
-// Order summary showing all the items they're buying, quantities, prices, and the total amount they'll pay
-// WHY YOU NEED THE FORM:
-// Without collecting their email and shipping address, you can't complete an order! The form gathers all the information needed to process and ship their purchase
-// THE FORM FIELDS YOU'LL NEED:
+// Both map through the cart array to show items
+// Both display product images, names, and prices
+// Both calculate subtotal, member discount, and final total
+// Both use the same cart data from props
 
-// Email address input
-// Full name input
-// Phone number input
-// Street address input
-// City input
-// State dropdown or input
-// Zip code input
-// Maybe a payment method selector (credit card, PayPal, etc)
+// WHAT'S DIFFERENT:
 
-// AT THE BOTTOM:
-// A big "Place Order" or "Complete Purchase" button that submits the form
+// Checkout page has NO plus/minus buttons (can't change quantities here)
+// Checkout page has NO remove buttons on individual items (can't delete items here)
+// Checkout is just for VIEWING and CONFIRMING the order, not editing it
+// Different styling to match the checkout layout
+
+// SO IT'S THE SAME CONCEPT - JUST WITHOUT THE EDITING BUTTONS!
+// The hard work of figuring out the map structure and price calculations is already done from the cart page - you're basically copying that logic but removing the interactive buttons!
