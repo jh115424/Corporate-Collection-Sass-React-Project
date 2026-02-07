@@ -132,7 +132,7 @@ const furnitureItems = [
   },
 ];
 
-export default function ProductsPage({cart, setCart}) {
+export default function ProductsPage({ cart, setCart }) {
   const { category } = useParams();
 
   const [searchFurniture, setSearchFurniture] = useState("all");
@@ -145,35 +145,37 @@ export default function ProductsPage({cart, setCart}) {
   }, [category]);
 
   const pickedFurnitureItems = furnitureItems.filter((furniture) =>
-    searchFurniture === "all" ? true : furniture.category === searchFurniture
+    searchFurniture === "all" ? true : furniture.category === searchFurniture,
   );
 
   const sortedItems =
     sortFurniture === ""
       ? pickedFurnitureItems
       : sortFurniture === "price-low-to-high"
-      ? [...pickedFurnitureItems].sort((a, b) => a.price - b.price)
-      : sortFurniture === "name-a-to-z"
-      ? [...pickedFurnitureItems].sort((a, b) => a.name.localeCompare(b.name))
-      : pickedFurnitureItems;
+        ? [...pickedFurnitureItems].sort((a, b) => a.price - b.price)
+        : sortFurniture === "name-a-to-z"
+          ? [...pickedFurnitureItems].sort((a, b) =>
+              a.name.localeCompare(b.name),
+            )
+          : pickedFurnitureItems;
 
-      const navigate = useNavigate();
+  const navigate = useNavigate();
 
- const handleAddToCart = (furniture) => {
-  const existingItem = cart.find(item => item.name === furniture.name);
-  if (existingItem) {
-    const updatedCart = cart.map(item =>
-      item.name === furniture.name
-        ? { ...item, quantity: (item.quantity || 1) + 1 }
-        : item
-    );
-    setCart(updatedCart);
-  } else {
-    setCart([...cart, { ...furniture, quantity: 1 }]);
-  }
-  console.log("Adding to cart:", furniture);
-  navigate("/cart");
-};
+  const handleAddToCart = (furniture) => {
+    const existingItem = cart.find((item) => item.name === furniture.name);
+    if (existingItem) {
+      const updatedCart = cart.map((item) =>
+        item.name === furniture.name
+          ? { ...item, quantity: (item.quantity || 1) + 1 }
+          : item,
+      );
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { ...furniture, quantity: 1 }]);
+    }
+    console.log("Adding to cart:", furniture);
+    navigate("/cart");
+  };
   return (
     <>
       <SubHeader />
@@ -207,11 +209,12 @@ export default function ProductsPage({cart, setCart}) {
             </div>
             <div className="furniturePrice">{furniture.price}</div>
 
-     
-             {/* <button className="putInCart">Add to Cart</button> */}
-
-            <button onClick={() => handleAddToCart(furniture) } className="putInCart">Add to Cart</button>
-      
+            <button
+              onClick={() => handleAddToCart(furniture)}
+              className="putInCart"
+            >
+              Add to Cart
+            </button>
           </div>
         ))}
       </div>

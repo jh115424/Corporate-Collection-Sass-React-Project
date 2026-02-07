@@ -25,7 +25,7 @@ export function AppRouter() {
         <Route path="/products" element={<ProductsPage cart={cart} setCart={setCart} />} />
        <Route path="/products/:category" element={<ProductsPage cart={cart} setCart={setCart} />} />
         <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} />} />
-        <Route path="/checkoutPage" element={<CheckoutPage />} />
+        <Route path="/checkoutPage" element={<CheckoutPage cart={cart} setCart={setCart} />} />
         <Route path="/about" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>

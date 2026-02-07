@@ -85,7 +85,7 @@ export default function CheckoutPage({ cart, setCart }) {
 
       <div className="checkoutContainer">
         <div className="customerInfoAndDelivery">
-          <form class="checkout-form">
+          <form className="checkout-form">
             <p className="sectionHeader">Customer Information</p>
             <div className="formUnderline"></div>
             <label htmlFor="email">EMAIL ADDRESS</label>
@@ -227,6 +227,27 @@ export default function CheckoutPage({ cart, setCart }) {
 
         <div className="orderInformation">
           <p className="orderFormHeader">Your Order</p>
+
+          {cart.length > 0 && (
+            <div className="checkoutBasketContainer">
+              {cart.map((furniture, index) => (
+                <div key={index}>
+                  <div>
+                    <img
+                      src={furniture.imageURL}
+                      className="checkOutFurnitureImage"
+                    />
+                    <div className="checkoutFurnitureName">
+                      {furniture.name && <span>{furniture.name}</span>}
+                    </div>
+                    <div className="checkoutFurniturePrice">
+                      {furniture.price && <span>{furniture.price}</span>}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
 
           <button
             onClick={emailCompanyHandleClick}
