@@ -293,11 +293,15 @@ export default function CheckoutPage({ cart, setCart }) {
             <div className="pricingBreakdown">
               <p className="subTotal">Subtotal: {`$${subtotal.toFixed(2)}`}</p>
               <p className="memberDiscount">
-                Member Discount: {`$${memberDiscount.toFixed(2)}`}
+                Member Discount: <span>{`$${memberDiscount.toFixed(2)}`}</span>
+              </p>
+              <p className="whiteGlove">
+                White Glove Service: <span>FREE</span>
               </p>
               <p className="salesTax">Sales Tax: {`$${salesTax.toFixed(2)}`}</p>
+              <div className="secondOrderTotalLine"></div>
               <p className="orderTotal">
-                Order Total: {`$${orderTotal.toFixed(2)}`}
+                Total: <span>{`$${orderTotal.toFixed(2)}`}</span>
               </p>
             </div>
           </div>
@@ -309,6 +313,11 @@ export default function CheckoutPage({ cart, setCart }) {
           >
             {send ? "isSending..." : "Send Order Email"}
           </button>
+          <div className="disclaimer">🔒 Secure 256-bit Encrypted Payment</div>
+          <div className="servicePackageTitle">
+            ✓ Premium Service PackageExpert assembly & installation • 60-day
+            satisfaction guarantee • Dedicated support team
+          </div>
         </div>
       </div>
     </>
@@ -334,20 +343,3 @@ export default function CheckoutPage({ cart, setCart }) {
 // Below the button, add a small text line with a lock icon saying the payment is secure and encrypted.
 // STEP 9 - ADD SERVICE BENEFITS BOX (OPTIONAL):
 // At the very bottom, add a highlighted box listing the premium services included like installation, guarantee period, and support team.
-
-// WHAT'S THE SAME:
-
-// Both map through the cart array to show items
-// Both display product images, names, and prices
-// Both calculate subtotal, member discount, and final total
-// Both use the same cart data from props
-
-// WHAT'S DIFFERENT:
-
-// Checkout page has NO plus/minus buttons (can't change quantities here)
-// Checkout page has NO remove buttons on individual items (can't delete items here)
-// Checkout is just for VIEWING and CONFIRMING the order, not editing it
-// Different styling to match the checkout layout
-
-// SO IT'S THE SAME CONCEPT - JUST WITHOUT THE EDITING BUTTONS!
-// The hard work of figuring out the map structure and price calculations is already done from the cart page - you're basically copying that logic but removing the interactive buttons!
