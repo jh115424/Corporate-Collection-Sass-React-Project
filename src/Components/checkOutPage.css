@@ -122,8 +122,35 @@ body {
   box-shadow: 0 10px 28px rgba(90, 107, 125, 0.32);
 }
 
-.checkOutFurnitureImage {
-width: 100px;
-height: 100px;
+.checkoutBasketContainer {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
 
+.cartFurnitureInfo {
+  display: flex;
+}
+.checkOutFurnitureImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  border-color: 2px gray;
+}
+.checkoutFurniturePrice {
+  margin-left: 20px;
+}
+
+.checkoutFurnitureName {
+  margin-left: 10px;
+}
+
+.orderTotalLine {
+  display: block;
+  border: none;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(18, 17, 17);
+  margin: 1.5rem 0;
 }

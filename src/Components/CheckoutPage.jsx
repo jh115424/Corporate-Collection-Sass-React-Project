@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router";
-// import { useState } from "react";
 import { Route } from "react-router";
 import ProductsPage from "./ProductsPage";
 import "./checkOutPage.css";
 import { useState } from "react";
 import Footer from "./Footer";
+import { useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function CheckoutPage({ cart, setCart }) {
@@ -26,14 +26,50 @@ export default function CheckoutPage({ cart, setCart }) {
 
   const [orderTotal, setOrderTotal] = useState(0);
   const [listOfItems, setListOfItems] = useState("");
-  const [dateAndTime, setDateAndTime] = useState("");
 
   const [send, setIsSending] = useState(false);
+
+  const [subtotal, setSubtotal] = useState(0);
+  const [memberDiscount, setMemberDiscount] = useState(0);
+  const [salesTax, setSalesTax] = useState(0);
+
+  const [dateAndTime, setDateAndTime] = useState("");
+
+  useEffect(() => {
+    const calculateTotal = cart.reduce(
+      (total, item) => total + item.price * (item.quantity || 1),
+      0,
+    );
+
+    const calculateDiscount = calculateTotal * 0.25;
+
+    const calculateSalesTax = (calculateTotal - calculateDiscount) * 0.055;
+
+    const finalTotal = calculateTotal - calculateDiscount + calculateSalesTax;
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setOrderTotal(finalTotal);
+
+    setSubtotal(calculateTotal);
+    setMemberDiscount(calculateDiscount);
+    setSalesTax(calculateSalesTax);
+  }, [cart]);
 
   const emailCompanyHandleClick = (e) => {
     e.preventDefault();
 
     setIsSending(true);
+
+    const cartDetailsArray = cart.map((item) => {
+      const cartItemsString = `${item.quantity} ${item.name} @ $${item.price}`;
+      return cartItemsString;
+    });
+
+    const cartDetails = cartDetailsArray.join(", ");
+
+    setListOfItems(cartDetails);
+
+    setDateAndTime(new Date().toLocaleString());
 
     const serviceId = "service_8fxa1nn";
     const templateId = "template_r3ycwdo";
@@ -68,6 +104,7 @@ export default function CheckoutPage({ cart, setCart }) {
           response.text,
         );
         alert("Order email sent successfully!");
+        setCart([]);
       })
       .catch((error) => {
         console.error("Failed to send order email", error);
@@ -76,6 +113,7 @@ export default function CheckoutPage({ cart, setCart }) {
         setIsSending(false);
       });
   };
+
   return (
     <>
       <p className="title">FINALIZE YOUR ORDER - CHECKOUT</p>
@@ -109,6 +147,7 @@ export default function CheckoutPage({ cart, setCart }) {
               id="lastName"
               type="text"
               value={lastName}
+              L
               onChange={(e) => setLastName(e.target.value)}
             />
 
@@ -232,7 +271,7 @@ export default function CheckoutPage({ cart, setCart }) {
             <div className="checkoutBasketContainer">
               {cart.map((furniture, index) => (
                 <div key={index}>
-                  <div>
+                  <div className="cartFurnitureInfo">
                     <img
                       src={furniture.imageURL}
                       className="checkOutFurnitureImage"
@@ -241,13 +280,27 @@ export default function CheckoutPage({ cart, setCart }) {
                       {furniture.name && <span>{furniture.name}</span>}
                     </div>
                     <div className="checkoutFurniturePrice">
-                      {furniture.price && <span>{furniture.price}</span>}
+                      {furniture.price && <span>{`$${furniture.price}`}</span>}
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           )}
+
+          <div className="finalPriceContainer">
+            <div className="orderTotalLine"></div>
+            <div className="pricingBreakdown">
+              <p className="subTotal">Subtotal: {`$${subtotal.toFixed(2)}`}</p>
+              <p className="memberDiscount">
+                Member Discount: {`$${memberDiscount.toFixed(2)}`}
+              </p>
+              <p className="salesTax">Sales Tax: {`$${salesTax.toFixed(2)}`}</p>
+              <p className="orderTotal">
+                Order Total: {`$${orderTotal.toFixed(2)}`}
+              </p>
+            </div>
+          </div>
 
           <button
             onClick={emailCompanyHandleClick}
