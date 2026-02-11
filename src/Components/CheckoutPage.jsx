@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import { useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
+
 export default function CheckoutPage({ cart, setCart }) {
   const [companyEmail, setCompanyEmail] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -47,7 +48,7 @@ export default function CheckoutPage({ cart, setCart }) {
 
     const finalTotal = calculateTotal - calculateDiscount + calculateSalesTax;
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     setOrderTotal(finalTotal);
 
     setSubtotal(calculateTotal);
@@ -311,7 +312,7 @@ export default function CheckoutPage({ cart, setCart }) {
             disabled={send}
             className="sendOrderButton"
           >
-            {send ? "isSending..." : "Send Order Email"}
+            {send ? "isSending..." : "Place Order"}
           </button>
           <div className="disclaimer">🔒 Secure 256-bit Encrypted Payment</div>
           <div className="servicePackageTitle">
@@ -320,6 +321,8 @@ export default function CheckoutPage({ cart, setCart }) {
           </div>
         </div>
       </div>
+      <Footer/>
+
     </>
   );
 }
