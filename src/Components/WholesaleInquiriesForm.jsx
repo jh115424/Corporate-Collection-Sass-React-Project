@@ -18,7 +18,13 @@ export default function wholesaleInquiriesForm() {
   const [primaryInterest, setPrimaryInterest] = useState("");
   const [message, setYourMessage] = useState("");
 
-  const wholeSaleEmailHandleClick = (e) => {};
+  const [send, setIsSending] = useState(false);
+
+  const wholeSaleEmailHandleClick = (e) => {
+    e.preventDefault();
+
+    setIsSending(true);
+  };
   return (
     <>
       <SubHeader />
@@ -82,6 +88,7 @@ export default function wholesaleInquiriesForm() {
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </div>
+
           <div className="businessDetailsDivider"></div>
           <h3>| BUSINESS DETAILS</h3>
           <div className="wholeSale-form-forthRow">
@@ -102,6 +109,27 @@ export default function wholesaleInquiriesForm() {
               type="text"
               value={businessYears}
               onChange={(e) => setBusinessYears(e.target.value)}
+            />
+          </div>
+
+          <div className="wholeSale-form-fifthRow">
+            <label htmlFor="city">
+              CITY<span>*</span>
+            </label>
+            <input
+              id="city"
+              type="text"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            />
+            <label htmlFor="state">
+              STATE<span>*</span>
+            </label>
+            <input
+              id="state"
+              type="text"
+              value={state}
+              onChange={(e) => setState(e.target.value)}
             />
           </div>
         </form>
