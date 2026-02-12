@@ -8,7 +8,6 @@ import Footer from "./Footer";
 import { useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
-
 export default function CheckoutPage({ cart, setCart }) {
   const [companyEmail, setCompanyEmail] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -48,7 +47,7 @@ export default function CheckoutPage({ cart, setCart }) {
 
     const finalTotal = calculateTotal - calculateDiscount + calculateSalesTax;
 
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     setOrderTotal(finalTotal);
 
     setSubtotal(calculateTotal);
@@ -321,8 +320,7 @@ export default function CheckoutPage({ cart, setCart }) {
           </div>
         </div>
       </div>
-      <Footer/>
-
+      <Footer />
     </>
   );
 }

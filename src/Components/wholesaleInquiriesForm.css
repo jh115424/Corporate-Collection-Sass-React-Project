@@ -3,7 +3,7 @@
 }
 
 .title {
-    flex-direction: column;
+  flex-direction: column;
   height: 150px;
   font-size: 24px;
   color: #8a8a8a;
@@ -24,9 +24,9 @@
   border-bottom: 2px solid #a9a9a9;
 }
 
-.title p{
-   color: white;
-   font-size: 12px;
+.title p {
+  color: white;
+  font-size: 12px;
 }
 
 h1 {
@@ -38,7 +38,124 @@ h1 {
   text-transform: uppercase;
 }
 
-.companyInfoContainer h3  {
- padding: 10px 10px 0 10px;
+.wholeSale-form-topLine,
+.companyInfoContainer h3 {
+  padding: 10px 10px 0 10px;
 }
 
+.companyInfoContainer {
+  width: 50%;
+  background-color: rgb(210, 214, 218);
+  height: auto;
+  gap: 20px;
+  flex-direction: column;
+  display: flex;
+}
+
+.wholeSale-form-topLine {
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wholeSale-form-topLine label {
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+
+.wholeSale-form-topLine input {
+  height: 50px;
+  width: 80%;
+  border-radius: 5px;
+  background-color: rgb(240, 239, 239);
+  border: 1.8px solid #c5cdd7;
+}
+
+.name {
+  margin-left: 20px;
+}
+
+.wholeSale-form-secondRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 50px;
+  width: 80%;
+}
+
+
+.wholeSale-form-secondRow label:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.wholeSale-form-secondRow label:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+
+.wholeSale-form-secondRow input:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 2;
+  height: 50px;
+  width: 100%;
+}
+
+.wholeSale-form-secondRow input:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+}
+
+.wholeSale-form-secondRow,
+.wholeSale-form-thirdRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 80%;
+}
+
+.wholeSale-form-thirdRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 80%;
+}
+
+.wholeSale-form-thirdRow label:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.wholeSale-form-thirdRow label:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 3;
+  width: 100%;
+}
+
+.wholeSale-form-thirdRow input:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 4;
+  height: 50px;
+  width: auto;
+}
+
+.wholeSale-form-thirdRow input:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 4;
+  height: 50px;
+  width: 100%;
+}
+
+span {
+  color: red;
+}
+
+.businessDetailsDivider {
+  width: 100%;
+  height: 3px;
+  background-color: #1a1a1a;
+}
