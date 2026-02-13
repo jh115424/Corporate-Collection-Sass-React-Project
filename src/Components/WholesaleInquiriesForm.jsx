@@ -14,16 +14,31 @@ export default function wholesaleInquiriesForm() {
   const [businessYears, setBusinessYears] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [volumeOrder, stVolumeOrder] = useState("");
   const [primaryInterest, setPrimaryInterest] = useState("");
   const [message, setYourMessage] = useState("");
 
+  const [orderVolume, setOrderVolume] = useState("");
   const [send, setIsSending] = useState(false);
 
   const wholeSaleEmailHandleClick = (e) => {
     e.preventDefault();
 
     setIsSending(true);
+
+    const sendWholeSaleDataParams = {
+      companyName: companyName,
+      contactName: contactName,
+      jobTitle: jobTitle,
+      email: email,
+      phoneNumber: phoneNumber,
+      businessType: businessType,
+      businessYears: businessYears,
+      city: city,
+      state: state,
+      orderVolume: orderVolume,
+      primaryInterest: primaryInterest,
+      message: message,
+    };
   };
   return (
     <>

@@ -137,7 +137,156 @@ h1 {
   grid-column: 1;
   grid-row: 4;
   height: 50px;
-  width: auto;
+  width: 100%;
+}
+
+.wholeSale-form-thirdRow input:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 4;
+  height: 50px;
+  width: 100%;
+}
+
+span {
+  color: red;
+}
+
+.businessDetailsDivider {
+  width: 100%;
+  height: 3px;
+  background-color: #1a1a1a;
+}
+
+/* ===== ROW 4 ===== */
+.wholeSale-form-forthRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 80%; /* MATCH rows 2 & 3 */
+}
+
+/* labels on top */
+.wholeSale-form-forthRow label:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 5;
+}
+
+.wholeSale-form-forthRow label:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 5;
+}
+
+/* inputs under labels */
+.wholeSale-form-forthRow input:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 6;
+  height: 50px;
+  width: 100%; /* MATCH rows 2 & 3 */
+}
+
+.wholeSale-form-forthRow input:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 6;
+  height: 50px;
+  width: 100%; /* MATCH rows 2 & 3 */
+}
+
+/* ===== ROW 5 ===== */
+.wholeSale-form-fifthRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 80%; /* MATCH rows 2 & 3 */
+}
+
+/* labels */
+.wholeSale-form-fifthRow label:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.wholeSale-form-fifthRow label:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* inputs */
+.wholeSale-form-fifthRow input:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 2;
+  height: 50px;
+  width: 100%; /* MATCH rows 2 & 3 */
+}
+
+.wholeSale-form-fifthRow input:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+  height: 50px;
+  width: 100%; /* MATCH rows 2 & 3 */
+}
+
+/* .wholeSale-form-secondRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 50px;
+  width: 80%;
+}
+
+.wholeSale-form-secondRow label:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.wholeSale-form-secondRow label:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.wholeSale-form-secondRow input:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 2;
+  height: 50px;
+  width: 100%;
+}
+
+.wholeSale-form-secondRow input:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+}
+
+.wholeSale-form-secondRow,
+.wholeSale-form-thirdRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 80%;
+}
+
+.wholeSale-form-thirdRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 80%;
+}
+
+.wholeSale-form-thirdRow label:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.wholeSale-form-thirdRow label:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 3;
+  width: 100%;
+}
+
+.wholeSale-form-thirdRow input:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 4;
+  height: 50px;
+  width: 100%;
 }
 
 .wholeSale-form-thirdRow input:nth-of-type(2) {
@@ -161,10 +310,10 @@ span {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  /* width: 80%; */
+  width: 100%;
 }
 
-/* labels on top */
+
 .wholeSale-form-forthRow label:nth-of-type(1) {
   grid-column: 1;
   grid-row: 5;
@@ -175,7 +324,7 @@ span {
   grid-row: 5;
 }
 
-/* inputs under labels */
+
 .wholeSale-form-forthRow input:nth-of-type(1) {
   grid-column: 1;
   grid-row: 6;
@@ -192,10 +341,10 @@ span {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  /* width: 80%; */
+
 }
 
-/* labels */
+
 .wholeSale-form-fifthRow label:nth-of-type(1) {
   grid-column: 1;
   grid-row: 1;
@@ -206,7 +355,7 @@ span {
   grid-row: 1;
 }
 
-/* inputs */
+
 .wholeSale-form-fifthRow input:nth-of-type(1) {
   grid-column: 1;
   grid-row: 2;
@@ -217,4 +366,5 @@ span {
   grid-column: 2;
   grid-row: 2;
   height: 50px;
-}
+  
+} */
