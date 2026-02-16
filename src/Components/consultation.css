@@ -1,0 +1,17 @@
+.consultationContainer {
+  font-size: 30px;
+  margin-top: 100px;
+  text-align: center;
+  color: rgb(154, 93, 15);
+}
+.calenderIntro {
+  font-size: 18px;
+}
+.headerLine {
+  width: 10%;
+  height: 3px;
+  background: linear-gradient(to bottom right, gold, orange);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}

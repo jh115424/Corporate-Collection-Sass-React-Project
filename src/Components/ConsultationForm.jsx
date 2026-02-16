@@ -7,36 +7,34 @@ import emailjs from "@emailjs/browser";
 import { Link } from "react-router";
 
 export default function Consultation() {
-
   // Form Field //
-const [firstName, setFirstName] = useState("")
-const [lastName, setLastName] = useState("")
-const [email, setEmail] = useState("")
-const [phone, setPhone] = useState("")
-const [companyName, setCompanyName] = useState("")
-const [jobTitle, setJobTitle] = useState("")
-const [meetingFormat, setMeetingFormat] = useState("")
-const [ budget, setBudget] = useState("")
-const [projectNotes, setProjectNotes] = useState("")
-const [send, isSending] = useState("")
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+  const [meetingFormat, setMeetingFormat] = useState("");
+  const [budget, setBudget] = useState("");
+  const [projectNotes, setProjectNotes] = useState("");
+  const [send, isSending] = useState("");
 
-// Calender Var //
+  // Calender Var //
 
-const [currentMonth, setCurrentMonth] = useState("")
-const [currentYear, setCurrentYear] = useState("")
-const [selectedDate, setSelectedDate] = useState("")
-const [selectedTime, setSelectedTime] = useState("")
-
-
-
-
-
+  const [currentMonth, setCurrentMonth] = useState("");
+  const [currentYear, setCurrentYear] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
 
   return (
     <>
       <SubHeader />
       <div className="consultationContainer">
-
+        <header>SCHEDULE A CONSULTATION</header>
+        <div className="headerLine"></div>
+        <p className="calenderIntro">
+          Select a date and time that works best for you
+        </p>
       </div>
     </>
   );
