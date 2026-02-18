@@ -89,6 +89,8 @@ export default function Consultation() {
           <p className="dates">31</p>
         </div>
         <div className="timeLine"></div>
+        {/* <p className="timePick">Select a time</p> */}
+        <div className="timePick">Select a time</div>
         <div className="timeSelection">
           <p className="times">9:00AM</p>
           <p className="times">1:00PM</p>
@@ -98,6 +100,11 @@ export default function Consultation() {
           <p className="times">11:00PM</p>
           <p className="times">1:00PM</p>
           <p className="times">12:00PM</p>
+        </div>
+        <div className="dateThatIsSelected">
+          <p>
+            Selected: <span>January 19th, 2026</span>
+          </p>
         </div>
       </div>
     </>
