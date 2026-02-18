@@ -35,6 +35,11 @@ export default function Consultation() {
         <p className="calenderIntro">
           Select a date and time that works best for you
         </p>
+        <div className="actualCalenderContainer">
+          <div className="monthHeaderLeftArrow">‹</div>
+          <div className="calenderMonth"><p>January 2026</p></div>
+           <div className="monthHeaderRightArrow">›</div>
+        </div>
       </div>
     </>
   );
