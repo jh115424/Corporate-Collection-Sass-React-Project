@@ -37,8 +37,67 @@ export default function Consultation() {
         </p>
         <div className="actualCalenderContainer">
           <div className="monthHeaderLeftArrow">‹</div>
-          <div className="calenderMonth"><p>January 2026</p></div>
-           <div className="monthHeaderRightArrow">›</div>
+          <div className="calenderMonth">
+            <p>January 2026</p>
+          </div>
+          <div className="monthHeaderRightArrow">›</div>
+        </div>
+        <div className="daysOfTheWeek">
+          <p className="days">SU</p>
+          <p className="days">MO</p>
+          <p className="days">TU</p>
+          <p className="days">WE</p>
+          <p className="days">TH</p>
+          <p className="days">FR</p>
+          <p className="days">SA</p>
+        </div>
+        <div className="datesOfTheWeek">
+          <p className="dates"></p>
+          <p className="dates"></p>
+          <p className="dates"></p>
+          <p className="dates"></p>
+          <p className="dates">1</p>
+          <p className="dates">2</p>
+          <p className="dates">3</p>
+          <p className="dates">4</p>
+          <p className="dates">5</p>
+          <p className="dates">6</p>
+          <p className="dates">7</p>
+          <p className="dates">8</p>
+          <p className="dates">9</p>
+          <p className="dates">10</p>
+          <p className="dates">11</p>
+          <p className="dates">12</p>
+          <p className="dates">13</p>
+          <p className="dates">14</p>
+          <div className="cal-day selected">15</div>
+          <p className="dates">16</p>
+          <p className="dates">17</p>
+          <p className="dates">18</p>
+          <p className="dates">19</p>
+          <p className="dates">20</p>
+          <p className="dates">21</p>
+          <p className="dates">22</p>
+          <p className="dates">23</p>
+          <p className="dates">24</p>
+          <p className="dates">25</p>
+          <p className="dates">26</p>
+          <p className="dates">27</p>
+          <p className="dates">28</p>
+          <p className="dates">29</p>
+          <p className="dates">30</p>
+          <p className="dates">31</p>
+        </div>
+        <div className="timeLine"></div>
+        <div className="timeSelection">
+          <p className="times">9:00AM</p>
+          <p className="times">1:00PM</p>
+          <p className="times">3:00PM</p>
+          <p className="time-cal selected">10:00AM</p>
+          <p className="times">4:00PM</p>
+          <p className="times">11:00PM</p>
+          <p className="times">1:00PM</p>
+          <p className="times">12:00PM</p>
         </div>
       </div>
     </>
