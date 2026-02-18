@@ -1,3 +1,11 @@
+
+background {
+
+    
+}
+
+
+
 .consultationContainer {
   font-size: 30px;
   margin-top: 100px;
@@ -25,7 +33,7 @@
   border: 2px solid gold;
   display: flex;
   justify-content: space-between;
-  background-color:#a52a2a;;
+  background-color:#2c2416;
   align-items: center;
 }
 
