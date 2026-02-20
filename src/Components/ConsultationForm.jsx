@@ -8,16 +8,16 @@ import { Link } from "react-router";
 
 export default function Consultation() {
   // Form Field //
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
-  const [meetingFormat, setMeetingFormat] = useState("");
+  // const [companyName, setCompanyName] = useState("");
+  // const [jobTitle, setJobTitle] = useState("");
+  // const [meetingFormat, setMeetingFormat] = useState("");
   const [budget, setBudget] = useState("");
-  const [projectNotes, setProjectNotes] = useState("");
-  const [send, isSending] = useState("");
+  // const [projectNotes, setProjectNotes] = useState("");
+  const [send, setIsSending] = useState("");
 
   // Calender Var //
 
@@ -25,6 +25,44 @@ export default function Consultation() {
   const [currentYear, setCurrentYear] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
+
+  const sendConsultationHandleClick = (e) => {
+    e.preventDefault();
+
+    setIsSending(true);
+
+    const serviceId = "service_8fxa1nn";
+    const templateId = "template_r3ycwdo";
+    const publicKey = "74BZsOVATORg5niqu";
+
+    const bookConsultationDataParams = {
+      email: email,
+      phone: phone,
+      budget: budget,
+    };
+
+    emailjs
+      .send(serviceId, templateId, bookConsultationDataParams, publicKey)
+      .then((response) => {
+        console.log(
+          "Booking complete!  You will receive a confirmation email 24 hours prior to appointment",
+          response.status,
+          response.text,
+        );
+        alert(
+          "Booking complete!  You will receive a confirmation email 24 hours prior to appointment",
+        );
+        setEmail("");
+        setPhone("");
+        setBudget("");
+      })
+      .catch((error) => {
+        console.error("Booking email failed to send", error);
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
 
   return (
     <>
@@ -106,6 +144,17 @@ export default function Consultation() {
             Selected: <span>January 19th, 2026</span>
           </p>
         </div>
+        <div className="timeLine"></div>
+        <div className="infoForm">
+          <p className="formTitle">YOUR INFORMATION</p>
+        </div>
+        <button
+          onClick={sendConsultationHandleClick}
+          disabled={send}
+          className="bookConsultation"
+        >
+          {send ? "isSending..." : "Book My Consultation"}
+        </button>
       </div>
     </>
   );

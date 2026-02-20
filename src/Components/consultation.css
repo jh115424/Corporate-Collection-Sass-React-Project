@@ -129,3 +129,11 @@
 .dateThatIsSelected span {
   color: black;
 }
+
+.bookConsultation {
+  width: 50%;
+  height: 50px;
+  background: #2c2416;
+  color: #d4af37;
+  font-size: 20px;
+}
