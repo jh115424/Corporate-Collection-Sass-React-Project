@@ -1,30 +1,8 @@
-// import React, { useEffect } from "react";
 import React from "react";
 import "./footer.css";
 import { Link } from "react-router";
-// import { useRef } from "react";
 
 export default function Footer() {
-  //   const pullDownName = useRef(null);
-
-  //   useEffect(() => {
-  //     let wordObserve = new IntersectionObserver((entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           console.log("Name is in view");
-
-  //           pullDownName.current.classList.add("ending-active");
-  //         }
-  //       });
-  //     });
-
-  //     wordObserve.observe(pullDownName.current);
-
-  //     return () => {
-  //       wordObserve.disconnect();
-  //     };
-  //   }, []);
-
   return (
     <>
       <div className="FooterContainer">
@@ -52,3 +30,8 @@ export default function Footer() {
     </>
   );
 }
+
+// Add to your existing Company column:
+// Company - About Us, Careers, Press
+// Legal - Privacy Policy, Terms of Service
+// Contact Info - Email address, Phone number, Location/City

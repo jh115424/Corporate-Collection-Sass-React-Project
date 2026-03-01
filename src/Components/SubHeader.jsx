@@ -27,10 +27,6 @@ export default function SubHeader() {
           <Link to="/products">
             <button className="productsButton">Products</button>
           </Link>
-
-          <Link to="/contact">
-            <button className="contactButton">Contact Us</button>
-          </Link>
         </div>
       </div>
     </>

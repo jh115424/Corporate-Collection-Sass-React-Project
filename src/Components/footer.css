@@ -1,6 +1,6 @@
 .FooterContainer {
   background-color: rgb(62, 61, 61);
-  height: 550px;
+  height: 150px;
   width: 100%;
   margin-top: 100px;
   margin-left: auto;
@@ -52,7 +52,6 @@ li {
 }
 
 .ending {
-  font-size: 168px;
   text-align: center;
   color: white;
   -webkit-background-clip: text;
@@ -60,7 +59,7 @@ li {
   margin: 0;
   line-height: 1;
   opacity: 0.998178;
-  font-size: 168px;
+  font-size: 120px;
   text-align: center;
   margin: 0;
   background: linear-gradient(to bottom, #808080, #ffffff);
@@ -68,4 +67,3 @@ li {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-

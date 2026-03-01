@@ -123,7 +123,11 @@ export default function CheckoutPage({ cart, setCart }) {
 
       <div className="checkoutContainer">
         <div className="customerInfoAndDelivery">
-          <form className="checkout-form">
+          <form
+            id="checkout-form"
+            className="checkout-form"
+            onSubmit={emailCompanyHandleClick}
+          >
             <p className="sectionHeader">Customer Information</p>
             <div className="formUnderline"></div>
             <label htmlFor="email">EMAIL ADDRESS</label>
@@ -132,6 +136,7 @@ export default function CheckoutPage({ cart, setCart }) {
               type="email"
               value={companyEmail}
               onChange={(e) => setCompanyEmail(e.target.value)}
+              required
             />
 
             <label htmlFor="firstName">FIRST NAME</label>
@@ -140,6 +145,7 @@ export default function CheckoutPage({ cart, setCart }) {
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              required
             />
 
             <label htmlFor="lastName">LAST NAME</label>
@@ -149,6 +155,7 @@ export default function CheckoutPage({ cart, setCart }) {
               value={lastName}
               L
               onChange={(e) => setLastName(e.target.value)}
+              required
             />
 
             <label htmlFor="phoneNUmber">PHONE NUMBER</label>
@@ -157,10 +164,10 @@ export default function CheckoutPage({ cart, setCart }) {
               type="tel"
               value={phoneNumber}
               onChange={(e) => {
-                // remove any character that is not 0-9 or dash
                 const filtered = e.target.value.replace(/[^0-9-]/g, "");
                 setPhoneNumber(filtered);
               }}
+              required
             />
 
             <p className="sectionHeader">Delivery Address</p>
@@ -180,6 +187,7 @@ export default function CheckoutPage({ cart, setCart }) {
               type="text"
               value={shippingAddress}
               onChange={(e) => setShippingAddress(e.target.value)}
+              required
             />
 
             <label htmlFor="suiteOrFloor">SUITE/BUILDING/FLOOR</label>
@@ -196,6 +204,7 @@ export default function CheckoutPage({ cart, setCart }) {
               type="text"
               value={city}
               onChange={(e) => setCity(e.target.value)}
+              required
             />
 
             <label htmlFor="state">STATE</label>
@@ -204,6 +213,7 @@ export default function CheckoutPage({ cart, setCart }) {
               type="text"
               value={state}
               onChange={(e) => setState(e.target.value)}
+              required
             />
 
             <label htmlFor="zipCode">ZIP CODE</label>
@@ -212,10 +222,10 @@ export default function CheckoutPage({ cart, setCart }) {
               type="text"
               value={zipCode}
               onChange={(e) => {
-                // remove any character that is not 0-9 or dash
                 const filtered = e.target.value.replace(/[^0-9-]/g, "");
                 setZipCode(filtered);
               }}
+              required
             />
 
             <label htmlFor="country">COUNTRY</label>
@@ -224,6 +234,7 @@ export default function CheckoutPage({ cart, setCart }) {
               type="text"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
+              required
             />
 
             <p className="sectionHeader">Payment Method</p>
@@ -233,6 +244,7 @@ export default function CheckoutPage({ cart, setCart }) {
               value={cardType}
               onChange={(e) => setCardType(e.target.value)}
               className="cardTypeBox"
+              required
             >
               <option value="">Select Card</option>
               <option value="Visa">Visa</option>
@@ -247,10 +259,10 @@ export default function CheckoutPage({ cart, setCart }) {
               type="text"
               value={cardNumber}
               onChange={(e) => {
-                // remove any character that is not 0-9 or dash
                 const filtered = e.target.value.replace(/[^0-9-]/g, "");
                 setCardNumber(filtered);
               }}
+              required
             />
 
             <label htmlFor="specialInstructions">SPECIAL INSTRUCTIONS</label>
@@ -307,11 +319,12 @@ export default function CheckoutPage({ cart, setCart }) {
           </div>
 
           <button
-            onClick={emailCompanyHandleClick}
+            type="submit"
+            form="checkout-form"
             disabled={send}
             className="sendOrderButton"
           >
-            {send ? "isSending..." : "Place Order"}
+            {send ? "Sending email..." : "Place Order"}
           </button>
           <div className="disclaimer">🔒 Secure 256-bit Encrypted Payment</div>
           <div className="servicePackageTitle">
@@ -324,23 +337,3 @@ export default function CheckoutPage({ cart, setCart }) {
     </>
   );
 }
-
-// COMPLETE STEPS TO BUILD THE ORDER SUMMARY SIDE (LAYOUT 5 STYLE):
-// STEP 1 - MAP THROUGH CART ITEMS:
-// Between the "Your Order" header and the button, you need to loop through the cart array. For each item in the cart, display a section showing the product image, product name, quantity with color or specs, and the individual item price.
-// STEP 2 - ADD KEY ATTRIBUTE:
-// When you map through the cart items, each item's wrapper element needs a key attribute with the index so React can track each item properly.
-// STEP 3 - CREATE PRICING BREAKDOWN SECTION:
-// After the cart items loop and before the button, add a section that calculates and displays all the price information. This section shows subtotal (all items added together), member discount (25% off), white glove delivery status (free), sales tax calculation, and the final grand total.
-// STEP 4 - CALCULATE SUBTOTAL:
-// Use the reduce method on the cart array to add up all item prices multiplied by their quantities. This gives you the total before any discounts or taxes.
-// STEP 5 - CALCULATE MEMBER DISCOUNT:
-// Multiply the subtotal by 0.25 to get the 25% discount amount. Display this as a negative number in green to show savings.
-// STEP 6 - CALCULATE TAX:
-// Multiply the subtotal (after discount is applied) by your tax rate. Most states use between 6% to 10% sales tax.
-// STEP 7 - CALCULATE FINAL TOTAL:
-// Take the subtotal, subtract the discount, add the tax. This is the final amount customers pay.
-// STEP 8 - ADD SECURITY BADGE (OPTIONAL):
-// Below the button, add a small text line with a lock icon saying the payment is secure and encrypted.
-// STEP 9 - ADD SERVICE BENEFITS BOX (OPTIONAL):
-// At the very bottom, add a highlighted box listing the premium services included like installation, guarantee period, and support team.

@@ -93,7 +93,11 @@ export default function WholesaleInquiriesForm() {
       <div className="flexContainer">
         <div className="companyInfoContainer">
           <h3>| COMPANY & CONTACT</h3>
-          <form className="wholeSale-form-topLine">
+          <form
+            id="wholesale-form"
+            className="wholeSale-form-topLine"
+            onSubmit={wholeSaleEmailHandleClick}
+          >
             <label htmlFor="name">
               COMPANY NAME<span>*</span>
             </label>
@@ -102,6 +106,7 @@ export default function WholesaleInquiriesForm() {
               type="text"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
+              required
             />
             <div className="wholeSale-form-secondRow">
               <label htmlFor="contactName">
@@ -112,6 +117,7 @@ export default function WholesaleInquiriesForm() {
                 type="text"
                 value={contactName}
                 onChange={(e) => setContactName(e.target.value)}
+                required
               />
               <label htmlFor="jobTitle">
                 JOB TITLE<span>*</span>
@@ -121,6 +127,7 @@ export default function WholesaleInquiriesForm() {
                 type="text"
                 value={jobTitle}
                 onChange={(e) => setJobTitle(e.target.value)}
+                required
               />
             </div>
             <div className="wholeSale-form-thirdRow">
@@ -132,6 +139,7 @@ export default function WholesaleInquiriesForm() {
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <label htmlFor="phoneNumber">
                 PHONE<span>*</span>
@@ -141,6 +149,7 @@ export default function WholesaleInquiriesForm() {
                 type="text"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
+                required
               />
             </div>
             <div className="businessDetailsDivider"></div>
@@ -157,6 +166,7 @@ export default function WholesaleInquiriesForm() {
                 type="text"
                 value={businessType}
                 onChange={(e) => setBusinessType(e.target.value)}
+                required
               />
               <label htmlFor="businessYears">
                 BUSINESS YEARS<span>*</span>
@@ -166,6 +176,7 @@ export default function WholesaleInquiriesForm() {
                 type="text"
                 value={businessYears}
                 onChange={(e) => setBusinessYears(e.target.value)}
+                required
               />
             </div>
             <div className="wholeSale-form-fifthRow">
@@ -177,6 +188,7 @@ export default function WholesaleInquiriesForm() {
                 type="text"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
+                required
               />
               <label htmlFor="state">
                 STATE<span>*</span>
@@ -186,6 +198,7 @@ export default function WholesaleInquiriesForm() {
                 type="text"
                 value={state}
                 onChange={(e) => setState(e.target.value)}
+                required
               />
             </div>
             <div className="wholeSale-form-sixthRow">
@@ -197,6 +210,7 @@ export default function WholesaleInquiriesForm() {
                 type="text"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
+                required
               />
             </div>
             <div className="wholeSale-form-seventhRow">
@@ -207,6 +221,7 @@ export default function WholesaleInquiriesForm() {
                 id="orderVolume"
                 value={orderVolume}
                 onChange={(e) => setOrderVolume(e.target.value)}
+                required
               >
                 <option value="">Select Range</option>
                 <option value="5-20k">$5k - $20k</option>
@@ -221,6 +236,7 @@ export default function WholesaleInquiriesForm() {
                 id="primaryInterest"
                 value={primaryInterest}
                 onChange={(e) => setPrimaryInterest(e.target.value)}
+                required
               >
                 <option value="">Executive Furniture</option>
                 <option value="Workstations">Workstations</option>
@@ -231,7 +247,7 @@ export default function WholesaleInquiriesForm() {
             </div>
             <div className="wholeSale-form-eighthRow">
               <label htmlFor="message" className="messageHeader">
-                MESSAGE<span>*</span>
+                MESSAGE (Optional)
               </label>
               <input
                 id="message"
@@ -249,7 +265,8 @@ export default function WholesaleInquiriesForm() {
             </p>
           </div>
           <button
-            onClick={wholeSaleEmailHandleClick}
+            type="submit"
+            form="wholesale-form"
             disabled={send}
             className="sendWholeSaleButton"
           >

@@ -21,8 +21,7 @@ import TwoGrayReceptionChairs from "../assets/CategoryFurniture/ExecutiveRecepti
 import { useState } from "react";
 import { useParams } from "react-router";
 import { useEffect } from "react";
-import { Link } from "react-router";
-import CartPage from "./CartPage";
+import Footer from "./Footer";
 
 const furnitureItems = [
   {
@@ -218,20 +217,7 @@ export default function ProductsPage({ cart, setCart }) {
           </div>
         ))}
       </div>
+      <Footer/>
     </>
   );
 }
-
-// SHOPPING CART IMPLEMENTATION - COMPLETE BREAKDOWN:
-// STEP 1 - CREATE CART STATE (IN APP.JSX OR CONTEXT):
-// Create useState to hold cart items array - this needs to be accessible by multiple components
-// STEP 2 - ADD TO CART BUTTONS (IN PRODUCTSPAGE):
-// On each product card (in the map), add an "Add to Cart" button that adds that product to the cart state
-// STEP 3 - CREATE CART PAGE COMPONENT (NEW FILE):
-// Make a new CartPage.jsx component that displays all items in the cart with their details
-// STEP 4 - ADD CART ROUTE (IN MAIN.JSX):
-// Add a route for /cart that shows the CartPage component
-// STEP 5 - CART ICON IN SUBHEADER (IN SUBHEADER.JSX):
-// Add a shopping cart icon/button that shows cart item count and links to /cart
-// STEP 6 - REMOVE FROM CART (IN CARTPAGE):
-// Add remove buttons on each cart item that delete them from cart state

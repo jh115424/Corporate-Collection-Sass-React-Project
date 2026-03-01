@@ -1,12 +1,19 @@
 .days {
   font-size: 14px;
 }
-
 .dates {
   color: rgb(26, 25, 25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  cursor: pointer;
 }
 
-.cal-day.selected {
+
+
+
+.dates.selected {
   background: #2c2416;
   color: #d4af37;
   width: 100px;
@@ -28,21 +35,19 @@
   align-items: center;
 }
 
-.times {
+.times{
   border: solid 2px black;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 
 .datesOfTheWeek {
   display: grid;
   background-color: white;
   grid-template-rows: repeat(7, 1fr);
-
   grid-template-columns: repeat(7, 1fr);
-
-  /* gap: 10px; */
 }
 .daysOfTheWeek {
   display: flex;
@@ -85,18 +90,13 @@
   color: gold;
 }
 
-.monthHeaderLeftArrow {
+.monthHeaderLeftArrow,
+.monthHeaderRightArrow {
   margin-left: 50px;
   border: 2px solid gold;
   width: 30px;
   color: gold;
-}
-
-.monthHeaderRightArrow {
-  margin-right: 50px;
-  border: 2px solid gold;
-  color: gold;
-  width: 30px;
+  cursor: pointer;
 }
 
 .timeLine {
@@ -106,7 +106,13 @@
   background: gray;
 }
 
-.timeSelection {
+
+.times.selected {
+  background: #2c2416;
+  color: #d4af37;
+}
+
+.timeSelection{
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   background-color: white;
@@ -128,6 +134,7 @@
 }
 .dateThatIsSelected span {
   color: black;
+ 
 }
 
 .bookConsultation {
@@ -136,4 +143,51 @@
   background: #2c2416;
   color: #d4af37;
   font-size: 20px;
+
+  margin-top: 50px;
+}
+
+.yourInfoForm {
+  background-color: white;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+.yourInfoForm select {
+  border-radius: 5px;
+  border: 1.8px solid #c5cdd7;
+  height: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.yourInfoForm input {
+  border-radius: 5px;
+  border: 1.8px solid #c5cdd7;
+  height: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yourInfoForm label {
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 25%;
+  margin-top: 20px;
+}
+
+#description {
+  height: 120px;
+}
+
+span {
+  color: red;
 }

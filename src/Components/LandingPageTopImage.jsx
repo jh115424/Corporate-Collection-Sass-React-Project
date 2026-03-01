@@ -26,8 +26,7 @@ export default function LandingPageTopImage() {
       <div className="topImageContainer">
         <img src={changePicture} alt="meetingRoom" className="threeImages" />
       </div>
-       <TrustedClients />
+      <TrustedClients />
     </>
   );
- 
 }

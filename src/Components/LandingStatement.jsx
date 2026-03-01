@@ -3,7 +3,6 @@ import "./landingStatement.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
-
 import SubHeader from "./SubHeader";
 
 const words = [
@@ -39,7 +38,6 @@ export default function TopHeader() {
         Transform your office into the competitive edge your executive vision
         demands
       </p>
-
     </>
   );
 }
