@@ -3,8 +3,6 @@ body {
   overflow-x: hidden;
 }
 
-
-
 .topBlackHeader {
   width: 100%;
   display: flex;
@@ -13,9 +11,6 @@ body {
 
   align-items: center;
   background-color: black;
-/* z-index: 10; */
-
-
 }
 
 .topBlackHeader {
@@ -29,5 +24,4 @@ body {
   color: #e5e4e2;
   margin-top: -35px;
   cursor: pointer;
-  
 }

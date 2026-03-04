@@ -2,7 +2,6 @@
   background-color: rgb(62, 61, 61);
   height: 150px;
   width: 100%;
-  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -30,9 +29,12 @@ li {
   list-style: none;
 }
 
-.firstFooterColumn a {
+.firstFooterColumn a,
+.secondFooterColumn a,
+.thirdFooterColumn a {
   list-style: none;
   text-decoration: none;
+  color: gold;
 }
 
 .firstFooterColumn p {
@@ -66,4 +68,9 @@ li {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.customerInfoAndDelivery {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }

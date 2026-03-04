@@ -10,9 +10,6 @@
   cursor: pointer;
 }
 
-
-
-
 .dates.selected {
   background: #2c2416;
   color: #d4af37;
@@ -35,7 +32,7 @@
   align-items: center;
 }
 
-.times{
+.times {
   border: solid 2px black;
   width: 50%;
   margin-left: auto;
@@ -106,13 +103,12 @@
   background: gray;
 }
 
-
 .times.selected {
   background: #2c2416;
   color: #d4af37;
 }
 
-.timeSelection{
+.timeSelection {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   background-color: white;
@@ -134,7 +130,6 @@
 }
 .dateThatIsSelected span {
   color: black;
- 
 }
 
 .bookConsultation {

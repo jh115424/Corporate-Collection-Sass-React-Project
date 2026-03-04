@@ -101,12 +101,18 @@
 }
 
 .titleAndImage {
+  border-radius: 5px;
+  color: #1a1a1a;
   display: flex;
+  gap: 20px;
   flex-direction: column;
+  transform: translateY(-2px);
 }
 
 .counter h1 {
-  font-size: 14px;
+  font-size: 18px;
+  color: red;
+  font-weight: 600;
 }
 
 .counter {
@@ -131,6 +137,9 @@
   width: 200px;
   height: 150px;
   border-radius: 5px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  border: 1px solid black;
+  padding: 10px;
 }
 
 .salePrice,

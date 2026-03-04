@@ -10,7 +10,8 @@ import AboutUs from "./Components/AboutUs.jsx";
 import CartPage from "./Components/CartPage.jsx";
 import CheckoutPage from "./Components/CheckoutPage.jsx";
 import Careers from "./Components/Careers.jsx";
-import Press from "./Components/Press.jsx"; //
+import Terms from "./Components/Terms.jsx";
+import Press from "./Components/Press.jsx"; 
 export function AppRouter() {
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");
@@ -49,6 +50,7 @@ export function AppRouter() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/press" element={<Press />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
     </BrowserRouter>
   );

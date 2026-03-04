@@ -1,9 +1,8 @@
-body {
+.checkoutContainer {
   font-family: "Lora", serif;
   background: linear-gradient(135deg, #e8ebef 0%, #dce1e8 100%);
   color: #4a5568;
 }
-
 .title {
   text-align: center;
   font-size: 24px;
@@ -73,7 +72,7 @@ body {
   width: 40%;
   height: 1100px;
   position: sticky;
-
+  margin-bottom: 100px;
   top: 20px;
   max-height: calc(100vh - 40px);
   overflow-y: auto;
@@ -86,11 +85,13 @@ body {
 .orderInformation {
   display: flex;
   flex-direction: column;
-
   display: flex;
   flex-direction: column;
   height: auto;
+  margin-top: 100px;
+
   max-height: none;
+  height: auto;
   overflow: visible;
 }
 
