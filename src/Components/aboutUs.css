@@ -88,18 +88,16 @@
 }
 
 .missionStatementContainer {
-
 }
 
 .biographyHeader,
-.missionHeader{
+.missionHeader {
   text-align: center;
   color: black;
 }
 
 .biographyParagraph,
-.missionStatement
-{
+.missionStatement {
   font-size: 20px;
   line-height: 1.5;
   margin-left: 20px;
@@ -112,7 +110,7 @@
   height: 300px;
   width: 100%;
   text-align: center;
-  background-color: #6e4a3e;
+  background-color: #2c2416;
 }
 .statsBreakdown {
   display: flex;
@@ -129,4 +127,12 @@
 .statsBreakdown span {
   color: #d4af37;
   font-size: 34px;
+}
+
+.aboutUsContainer .FooterContainer {
+  background-color: #604a23;
+}
+
+.aboutUsContainer .companyNameFinisher {
+  background-color: #2c2416;
 }

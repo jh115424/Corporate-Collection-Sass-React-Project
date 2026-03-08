@@ -1,0 +1,77 @@
+.careerContainer {
+  background: #f0f2f5;
+  display: flex;
+}
+
+.textSection {
+  background: #31455c;
+  position: relative;
+
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+  z-index: 1;
+  text-align: center;
+  height: 500px;
+
+  width: 50%;
+}
+
+.careerTopImageTwo {
+  width: 60%;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 1;
+  margin-left: -10%;
+}
+
+.separatorLine {
+  width: 10%;
+  height: 5px;
+  margin-right: auto;
+  margin-left: auto;
+
+  background: linear-gradient(white, transparent);
+  margin: 10px auto;
+}
+
+.careerHeader {
+  font-size: 35px;
+  margin-top: 200px;
+  color: white;
+}
+
+.hiringMotto {
+  font-size: 18px;
+  color: white;
+}
+
+.availablePositions {
+  background-color: rgba(99, 113, 146, 0);
+  height: 300px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.separatorLineTwo {
+  width: 10%;
+  height: 3px;
+  margin-right: auto;
+  margin-left: auto;
+
+  background-color: rgb(77, 77, 155);
+  margin: 10px auto;
+}
+
+.availablePositions {
+  margin-top: 150px;
+}
+.working {
+  color: rgba(33, 32, 32, 0.931);
+  text-align: center;
+}
+
+.workWithUsMotto {
+  color: rgba(91, 85, 85, 0.988);
+}

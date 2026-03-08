@@ -1,0 +1,74 @@
+.pressMainContainer {
+  display: flex;
+}
+
+.pressLeftSide {
+  align-content: center;
+
+  height: 500px;
+  width: 50%;
+  padding-bottom: 100px;
+  background: linear-gradient(
+    to right,
+    rgb(52, 39, 17) 60%,
+    rgba(91, 70, 24, 0.921)
+  );
+}
+
+.pressRightSide {
+  align-items: center;
+  width: 50%;
+  display: flex;
+  padding-bottom: 100px;
+  height: 500px;
+
+  justify-content: center;
+  background: linear-gradient(
+    to left,
+    rgba(26, 26, 26, 0.85) 30%,
+    rgba(26, 26, 26, 0.685)
+  );
+}
+
+.leftHeader {
+  font-size: 50px;
+  margin-left: 100px;
+}
+
+.goldDivider {
+  width: 100px;
+  height: 2px;
+  align-items: center;
+  margin-left: 100px;
+  background: linear-gradient(to right, var(--gold), #f0c84a, var(--gold));
+}
+
+.announcement {
+  margin-left: 100px;
+  color: #d4af37;
+  font-size: 20px;
+}
+
+.cardInfo {
+  background: #222222;
+  height: 450px;
+  width: 300px;
+  line-height: 2;
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  margin-right: auto;
+  margin-top: 100px;
+  border-left: 4px solid #d4af37;
+}
+
+.rightHeader {
+  align-items: center;
+  padding: 40px 50px;
+  color: #d4af37;
+}
+
+.pressAnnouncement {
+  font-size: 12px;
+  color: darkgray;
+}
