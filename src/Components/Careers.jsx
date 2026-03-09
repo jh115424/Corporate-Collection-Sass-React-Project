@@ -75,6 +75,17 @@ export default function Careers() {
           We are always looking for talented individuals who share our passion
           for exceptional <br /> design and uncompromising quality.
         </p>
+        <div className="noPositionCard">
+          <h1>NO POSITIONS AVAILABLE</h1>
+          <br />
+          <p className="jobAvailability">
+            There are no open positions at this time. <br />
+            Please check back soon.
+          </p>
+        </div>
+      </div>
+      <div className="companyNameFinisher">
+        <p className="ending">Corporate Collection</p>
       </div>
     </>
   );

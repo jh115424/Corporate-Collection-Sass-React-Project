@@ -65,7 +65,9 @@
 }
 
 .availablePositions {
-  margin-top: 150px;
+  padding-bottom: 50px;
+  height: auto;
+  background-color: rgb(231 231 235 / 15%);
 }
 .working {
   color: rgba(33, 32, 32, 0.931);
@@ -74,4 +76,24 @@
 
 .workWithUsMotto {
   color: rgba(91, 85, 85, 0.988);
+  line-height: 2;
+}
+
+.noPositionCard {
+  border: 1px solid #dce3ea;
+  padding: 40px;
+  background: white;
+  box-shadow: 0 4px 24px rgba(13, 27, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+}
+
+.jobAvailability {
+  line-height: 2;
 }
