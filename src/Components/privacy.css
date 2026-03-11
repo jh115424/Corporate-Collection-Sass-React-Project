@@ -1,0 +1,112 @@
+.mainHeaderContainer {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+
+.privacyUnderline,
+.tableOfContentLine {
+  width: 90%;
+  height: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(41, 41, 42);
+}
+
+.titleUnderline {
+  width: 90%;
+  height: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgb(140, 97, 97);
+  animation: colorShift 3s ease infinite;
+}
+
+@keyframes colorShift {
+  0% {
+    background: gray;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    background: gray;
+  }
+}
+
+.legalBodyContainer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  justify-content: center;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.legalName {
+  color: rgba(123, 119, 119, 0.997);
+  width: 95%;
+  margin-left: auto;
+  margin-top: 50px;
+}
+
+.legalImage {
+  background-image: url("../assets/PrivacyImage/PrivacyHeaderImage.png");
+  width: 100px;
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.messageMottoTwo {
+  line-height: 1.5;
+
+  font-size: 36px;
+  font-family: "Cormorant Garamond", serif;
+  color: darkgray;
+  font-weight: 600;
+  font-size: clamp(2.7rem, 5vw, 3.5rem);
+}
+
+.messageMottoTwo span {
+  font-style: italic;
+  color: rgba(147, 71, 71, 0.72);
+  /* font-family: "Cormorant Garamond", serif; */
+}
+
+.messageMottoThree {
+  display: flex;
+  margin-left: 200px;
+  justify-content: center;
+  color: gray;
+  font-size: 14px;
+}
+
+.tableOfContents {
+  margin-left: auto;
+  width: 95%;
+  margin-top: 100px;
+  line-height: 2;
+  color: rgb(94, 93, 93);
+}
+
+.contentsHeader {
+  color: gray;
+}
+
+a {
+  list-style: none;
+}
+
+.productionDate {
+  display: flex;
+  flex-direction: column;
+}
+
+.ccSecondMotto {
+  font-style: italic;
+  text-align: left;
+}

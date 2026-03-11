@@ -1,9 +1,122 @@
 import React from "react";
 import { Link } from "react-router";
 import "./privacy.css";
+import SubHeader from "./SubHeader";
+import { Link as ScrollLink } from "react-scroll";
+import PrivacyImage from "../assets/PrivacyImage/PrivacyHeaderImage.png";
 
 export default function Privacy() {
-  return <></>;
+  return (
+    <>
+      <div className="grandMainContainer">
+        <div className="mainHeaderContainer">
+          <Link to="/">
+            <div
+              className="companyName"
+              style={{
+                borderRadius: "50px",
+                height: "60px",
+                position: "sticky",
+                top: "0",
+                transition: "all 0.3s ease-in-out",
+                zIndex: "10",
+              }}
+            >
+              <p className="ccLogo" style={{ color: "#d4af37" }}>
+                CC
+              </p>
+              <p className="brandText" style={{ color: "#d4af37" }}>
+                Corporate Collection
+              </p>
+            </div>
+          </Link>
+
+          <div className="privacyTitle">
+            <p> PRIVACY & DATA POLICY</p>
+          </div>
+        </div>
+        <div className="titleUnderline"></div>
+        <p className="legalName">LEGAL</p>
+        <div className="legalBodyContainer">
+          <div className="legalImage"></div>
+
+          <div className="topMessage">
+            <h2 className="messageMottoTwo">
+              Your privacy <br />
+              <span>is not </span>a footnote
+            </h2>
+          </div>
+        </div>
+        <div className="messageMottoThree">
+          <p>
+            CRAFTER WITH CARE. <br />
+            HANDLED WITH DISCRETION.
+          </p>
+        </div>
+        <div className="privacyUnderline"></div>
+        <div className="tableOfContents">
+          <ol>
+            <li className="contentsHeader">CONTENTS</li> <br />
+            <li>
+              <ScrollLink to="collect" smooth={true} duration={500}>
+                WHAT WE COLLECT
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="usage" smooth={true} duration={500}>
+                {" "}
+                HOW WE USE IT
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="share" smooth={true} duration={500}>
+                SHARING YOUR DATA
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="cookies" smooth={true} duration={500}>
+                COOKIES
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="right" smooth={true} duration={500}>
+                YOUR RIGHTS
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="security" smooth={true} duration={500}>
+                SECURITY
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                duration={500}
+              ></ScrollLink>
+              CONTACT US
+            </li>
+          </ol>
+        </div>
+        <div className="tableOfContentLine"></div>
+        <div className="productionDate">
+          <p>Effective date</p>
+          <p>March 2026</p> <br />
+          <p>Version 3.1</p>
+        </div>
+        <div className="tableOfContentLine"></div>
+        <div className="ccSecondMotto">
+          <p>
+            At CC Corporate Collection, we believe the spaces you work in
+            deserve the same <br />
+            discretion as the conversations held within them. This policy
+            explains, plainly,
+            <br /> how we handle your personal information.
+          </p>
+        </div>
+      </div>
+    </>
+  );
 }
 
 /* 5:42 PMTerms of Service

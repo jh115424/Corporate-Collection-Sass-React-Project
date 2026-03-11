@@ -58,7 +58,7 @@ export default function Press() {
         <p className="ending">Corporate Collection</p>
       </div>
        {/* <Footer/> */}
-      {/* <SubHeader /> */}
+     
     </>
   );
 }
