@@ -1,7 +1,12 @@
+.grandMainContainer {
+  text-align: justify;
+}
+
 .mainHeaderContainer {
   display: flex;
   margin-left: 20px;
   margin-right: 20px;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -15,10 +20,9 @@
 }
 
 .titleUnderline {
-  width: 90%;
   height: 3px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
+  margin-right: 20px;
   background: rgb(140, 97, 97);
   animation: colorShift 3s ease infinite;
 }
@@ -87,10 +91,11 @@
 
 .tableOfContents {
   margin-left: auto;
+  margin-right: auto;
   width: 95%;
   margin-top: 100px;
   line-height: 2;
-  color: rgb(94, 93, 93);
+  color: gray;
 }
 
 .contentsHeader {
@@ -104,9 +109,15 @@ a {
 .productionDate {
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+  width: 95%;
+  color: gray;
 }
 
 .ccSecondMotto {
   font-style: italic;
   text-align: left;
+  margin-left: auto;
+  width: 90%;
+  margin-right: auto;
 }
