@@ -64,7 +64,6 @@ export default function Privacy() {
             </li>
             <li>
               <ScrollLink to="usage" smooth={true} duration={500}>
-                {" "}
                 HOW WE USE IT
               </ScrollLink>
             </li>
@@ -89,12 +88,9 @@ export default function Privacy() {
               </ScrollLink>
             </li>
             <li>
-              <ScrollLink
-                to="contact"
-                smooth={true}
-                duration={500}
-              ></ScrollLink>
-              CONTACT US
+              <ScrollLink to="contact" smooth={true} duration={500}>
+                CONTACT US
+              </ScrollLink>
             </li>
           </ol>
         </div>
@@ -115,6 +111,25 @@ export default function Privacy() {
           </p>
         </div>
         <div className="tableOfContentLine"></div>
+        <div id="collect" className="collectionCriteria">
+          <h2 className="criteriaTitle">01 &nbsp; &nbsp; What we collect</h2>
+          <p>
+            When you interact with us — whether browsing our catalogue, placing
+            an order, or <br />
+            contacting our design team — we may collect:
+          </p>
+          <ol className="collectionHistory">
+            <li>- Name, email address, and telephone number</li>
+            <li>- Billing and delivery address</li>
+            <li>- Order history and product preferences</li>
+            <li>- Device and browsing data when you visit our website</li>
+            <li>- Communications you send us directly</li>
+            <br />
+            <p>We collect only what is necessary. Nothing more.</p>
+          </ol>
+          <div className="criteriaUnderline"></div>
+        </div>
+        <div className="dataUsage"></div>
       </div>
     </>
   );

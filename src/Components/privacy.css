@@ -16,7 +16,7 @@
   height: 2px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(41, 41, 42);
+  background-color: rgb(157, 155, 155);
 }
 
 .titleUnderline {
@@ -78,7 +78,6 @@
 .messageMottoTwo span {
   font-style: italic;
   color: rgba(147, 71, 71, 0.72);
-  /* font-family: "Cormorant Garamond", serif; */
 }
 
 .messageMottoThree {
@@ -106,11 +105,13 @@ a {
   list-style: none;
 }
 
-.productionDate {
+.productionDate,
+.collectionCriteria {
   display: flex;
   flex-direction: column;
   margin-left: auto;
   width: 95%;
+  margin-top: 50px;
   color: gray;
 }
 
@@ -118,6 +119,21 @@ a {
   font-style: italic;
   text-align: left;
   margin-left: auto;
+  font-size: 16px;
+  margin-top: 50px;
   width: 90%;
+  color: gray;
   margin-right: auto;
+}
+
+.collectionHistory {
+  line-height: 2;
+}
+
+.criteriaUnderline {
+  width: 95%;
+  height: 2px;
+
+  margin-right: auto;
+  background-color: gray;
 }
