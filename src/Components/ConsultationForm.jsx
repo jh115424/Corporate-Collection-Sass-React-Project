@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import "./consultation.css";
+import Footer from "./Footer";
 import { useState } from "react";
 import SubHeader from "./SubHeader";
 import { useEffect } from "react";
@@ -291,6 +292,10 @@ export default function Consultation() {
           {send ? "Sending email..." : "Book My Consultation"}
         </button>
       </div>
+      <br />
+      <br />
+      <br />
+      <Footer />
     </>
   );
 }

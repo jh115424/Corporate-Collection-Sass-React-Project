@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 import "./press.css";
-
-
+import Footer from "./Footer";
 
 export default function Press() {
   return (
@@ -54,11 +53,8 @@ export default function Press() {
           </div>
         </div>
       </div>
-        <div className="companyNameFinisher">
-        <p className="ending">Corporate Collection</p>
-      </div>
-       {/* <Footer/> */}
-     
+      <br />
+      <Footer />
     </>
   );
 }

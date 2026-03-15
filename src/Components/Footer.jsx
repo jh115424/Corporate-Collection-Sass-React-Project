@@ -45,7 +45,3 @@ export default function Footer() {
   );
 }
 
-// Add to your existing Company column:
-// Company - About Us, Careers, Press
-// Legal - Privacy Policy, Terms of Service
-// Contact Info - Email address, Phone number, Location/City

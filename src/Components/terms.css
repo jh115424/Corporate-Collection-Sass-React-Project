@@ -1,0 +1,219 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream: #f5f0e8;
+  --warm-white: #faf8f4;
+  --charcoal: #1e1e1c;
+  --mid: #6b6560;
+  --light: #b0a89e;
+  --rule: #ddd7ce;
+  --accent: #8a6e4b;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--warm-white);
+  color: var(--charcoal);
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  min-height: 100vh;
+}
+
+.termsBodyWrap {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px 100px;
+}
+
+.termsSidebar {
+  padding-top: 64px;
+  padding-right: 48px;
+  border-right: 1px solid var(--rule);
+  position: sticky;
+  top: 89px;
+  align-self: start;
+}
+
+.termsSidebarLabel {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 24px;
+}
+
+.termsTocList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.termsTocList li a,
+.termsTocList li span {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mid);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: block;
+  line-height: 1.4;
+}
+
+.termsTocList li a:hover,
+.termsTocList li span:hover {
+  color: var(--accent);
+}
+
+.termsDateBlock {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--light);
+  line-height: 2;
+}
+
+.termsContent {
+  padding-top: 64px;
+  padding-left: 64px;
+}
+
+.termsIntroText {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--mid);
+  line-height: 1.7;
+  max-width: 580px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 56px;
+}
+
+.termsSection {
+  margin-bottom: 56px;
+}
+
+.termsSectionHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.termsSectionNum {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--light);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.termsSectionTitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  letter-spacing: 0.01em;
+}
+
+.termsSection p {
+  font-size: 0.88rem;
+  color: var(--mid);
+  margin-bottom: 16px;
+  padding-left: 46px;
+  max-width: 560px;
+}
+
+.termsDivider {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 56px 0;
+}
+
+.termsClosingBlock {
+  background: var(--cream);
+  padding: 40px 48px;
+  margin-top: 48px;
+}
+
+.termsClosingLabel {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.termsClosingQuote {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 480px;
+}
+
+.termsClosingContact {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+.termsFooter {
+  border-top: 1px solid var(--rule);
+  padding: 32px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--light);
+}
+
+@media (max-width: 768px) {
+  .termsBodyWrap {
+    grid-template-columns: 1fr;
+    padding: 0 24px 80px;
+  }
+
+  .termsSidebar {
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 32px;
+    padding-right: 0;
+  }
+
+  .termsContent {
+    padding-left: 0;
+  }
+
+  .termsFooter {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding: 24px;
+  }
+}

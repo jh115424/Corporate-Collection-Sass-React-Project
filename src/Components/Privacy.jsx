@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 import "./privacy.css";
+import Footer from "./Footer";
 import SubHeader from "./SubHeader";
 import { Link as ScrollLink } from "react-scroll";
 import PrivacyImage from "../assets/PrivacyImage/PrivacyHeaderImage.png";
@@ -78,7 +79,7 @@ export default function Privacy() {
               </ScrollLink>
             </li>
             <li>
-              <ScrollLink to="right" smooth={true} duration={500}>
+              <ScrollLink to="rights" smooth={true} duration={500}>
                 YOUR RIGHTS
               </ScrollLink>
             </li>
@@ -112,13 +113,13 @@ export default function Privacy() {
         </div>
         <div className="tableOfContentLine"></div>
         <div id="collect" className="collectionCriteria">
-          <h2 className="criteriaTitle">01 &nbsp; &nbsp; What we collect</h2>
+          <h2>01 &nbsp; &nbsp; What we collect</h2>
           <p>
             When you interact with us — whether browsing our catalogue, placing
             an order, or <br />
             contacting our design team — we may collect:
           </p>
-          <ol className="collectionHistory">
+          <ol className="collectionMessage">
             <li>- Name, email address, and telephone number</li>
             <li>- Billing and delivery address</li>
             <li>- Order history and product preferences</li>
@@ -129,15 +130,78 @@ export default function Privacy() {
           </ol>
           <div className="criteriaUnderline"></div>
         </div>
-        <div className="dataUsage"></div>
+        <div id="usage" className="dataUsage">
+          <h2>02 &nbsp; &nbsp; How we use it</h2>
+          <p className="usageMessage">
+            Your information is used to fulfil your orders, respond to your
+            enquiries, and — where <br />
+            you have given permission — send you updates about new collections
+            and events. <br />
+            We do not sell data. We do not use it for automated profiling that
+            affects your rights.
+          </p>
+        </div>
+        <div className="titleUnderline"></div>
+        <div id="share" className="sharing">
+          <h2>03 &nbsp; &nbsp; Sharing your data</h2>
+          <p className="sharingMessage">
+            We share personal data only with trusted partners essential to
+            delivering our service: <br />
+            - Logistics and delivery partners for order fulfillment <br />-
+            Payment processors operating under strict security standards <br />
+            - Our interior design consultants, where you have engaged them
+            directly <br /> <br />
+            All third parties are bound by confidentiality agreements. We never
+            sell or trade your <br /> information.
+          </p>
+        </div>
+        <div className="sharingUnderline"></div>
+        <div id="cookies" className="cookie">
+          <h2>04 &nbsp; &nbsp; Cookies</h2>
+          <p className="cookiesMessage">
+            We use a minimal set of cookies to keep the site functional and to
+            understand how <br />
+            visitors move through it. No third-party advertising cookies are
+            placed. You may adjust <br />
+            your preferences at any time via the cookie settings in your
+            browser.
+          </p>
+        </div>
+        <div className="cookiesUnderline"></div>
+        <div id="rights" className="yourRights">
+          <h2>05 &nbsp; &nbsp; Your rights</h2>
+          <div className="rightsMessage">
+            You have the right to access, correct, or delete any personal data
+            we hold. You may also <br />
+            withdraw consent for marketing communications at any time. To
+            exercise any of these <br />
+            rights, please contact our privacy team using the details below.
+          </div>
+        </div>
+        <div className="rightsUnderline"></div>
+        <div id="security" className="security">
+          <h2>06 &nbsp; &nbsp; Security</h2>
+          <div className="securityMessage">
+            We maintain industry-standard technical and organizational measures
+            to protect your data <br />
+            from unauthorized access, loss, or disclosure. Our systems are
+            reviewed regularly and <br /> updated in line with best practice.
+          </div>
+        </div>
+
+        <div id="contact" className="howToReach">
+          <h2 className="getInTouchHeader">GET IN TOUCH</h2>
+          <br />
+          <p className="contactInfoEnding">
+            Questions, requests, or concerns about how we handle your data are{" "}
+            <br />
+            always welcome. Write to us at CC Corporate Collections., 1370 S.{" "}
+            <br />
+            Illinois Drive, Suite 1820, Floor 18, Chicago, Illinois 60621
+          </p>
+        </div>
       </div>
+      <Footer />
     </>
   );
 }
-
-/* 
-About Us - A large hero image of a luxury office space at the top, maybe a second image of a sleek conference room halfway down, and a gold divider line between sections like you have elsewhere on your site
-Careers - A nice office environment photo at the top, and a simple "No positions available" card centered on the page with your brown and gold styling
-Press - A newspaper or media themed background image at the top, and a styled "No press releases available" card matching your brand colors
-Privacy Policy & Terms of Service - These don't need images really, but you could add your CC Corporate Collection logo or name at the top in big gold letters, a decorative gold divider line, and style the section headers in your brown color to break up the text and make it look polished instead of just plain text
-All of these just need your existing brown and gold color scheme applied consistently and they'll look sharp without being overly complicated! */

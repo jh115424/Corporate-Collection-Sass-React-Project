@@ -4,10 +4,14 @@
 
 .mainHeaderContainer {
   display: flex;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
   align-items: center;
   justify-content: space-between;
+}
+
+.tableOfContents a {
+  cursor: pointer;
 }
 
 .privacyUnderline,
@@ -106,7 +110,12 @@ a {
 }
 
 .productionDate,
-.collectionCriteria {
+.collectionCriteria,
+.dataUsage,
+.sharing,
+.cookie,
+.yourRights,
+.security {
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -126,14 +135,50 @@ a {
   margin-right: auto;
 }
 
-.collectionHistory {
+.collectionMessage,
+.usageMessage,
+.sharingMessage,
+.cookiesMessage,
+.rightsMessage,
+.securityMessage,
+.contactInfoEnding {
   line-height: 2;
 }
 
-.criteriaUnderline {
-  width: 95%;
+.titleUnderline,
+.sharingUnderline,
+.criteriaUnderline,
+.cookiesUnderline,
+.rightsUnderline,
+.securityUnderline {
+  width: 90%;
   height: 2px;
-
+  margin-left: auto;
   margin-right: auto;
   background-color: gray;
 }
+
+.howToReach {
+  margin-top: 100px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  margin-bottom: 50px;
+  background-color: rgb(242, 242, 173);
+}
+
+.getInTouchHeader,
+.contactInfoEnding {
+  color: rgb(60, 56, 56);
+  padding-top: 50px;
+  margin-left: 100px;
+  text-align: left;
+}
+
+.contactInfoEnding p {
+  color: black;
+}
+
+
+
