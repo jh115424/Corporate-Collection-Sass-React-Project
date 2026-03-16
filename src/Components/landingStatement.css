@@ -40,3 +40,14 @@
   font-weight: 300;
   color: rgb(40, 39, 39);
 }
+
+
+
+
+@media (max-width: 480px) {
+
+  .mainStatement {
+
+    font-size: 36px;
+  }
+}

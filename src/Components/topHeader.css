@@ -8,13 +8,9 @@ body {
   display: flex;
 
   justify-content: center;
-
+  color: #e5e4e2;
   align-items: center;
   background-color: black;
-}
-
-.topBlackHeader {
-  color: #e5e4e2;
 }
 
 .hideBanner {
@@ -24,4 +20,16 @@ body {
   color: #e5e4e2;
   margin-top: -35px;
   cursor: pointer;
+}
+@media (max-width: 480px) {
+  .headerSentence {
+    text-align: center;
+    /* font-size: 12px; */
+  }
+
+
+  .mainStatement {
+
+    font-size: 12px;
+  }
 }

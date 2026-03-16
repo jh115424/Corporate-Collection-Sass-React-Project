@@ -8,16 +8,14 @@ import FurnitureSlab from "./Components/FurnitureSlab";
 import Footer from "./Components/Footer";
 import CategoryNavigation from "./Components/CategoryNavigation";
 
-
 function App() {
-
   return (
     <div style={{ position: "relative", zIndex: 10, backgroundColor: "white" }}>
       <TopHeader />
       <SubHeader />
-    
+
       <LandingStatement />
-  <CategoryNavigation />
+      <CategoryNavigation />
       <LandingPageTopImage />
       <CompanyCarousel />
       <StatsSection />

@@ -12,6 +12,7 @@ import CheckoutPage from "./Components/CheckoutPage.jsx";
 import Careers from "./Components/Careers.jsx";
 import Terms from "./Components/Terms.jsx";
 import Press from "./Components/Press.jsx"; 
+
 export function AppRouter() {
   const [cart, setCart] = useState(() => {
     const savedCart = localStorage.getItem("cart");

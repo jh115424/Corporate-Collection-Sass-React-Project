@@ -87,3 +87,22 @@
   background-color: black;
   color: white;
 }
+
+@media (max-width: 480px) {
+  .dropDownContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+  }
+
+  .productsTopMenuLeft {
+    margin-bottom: 20px;
+  }
+
+  .productsButton {
+    width: 150px;
+    height: 50px;
+  }
+}
