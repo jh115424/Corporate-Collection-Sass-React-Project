@@ -73,4 +73,23 @@ li {
 .customerInfoAndDelivery {
   margin-top: 100px;
   margin-bottom: 100px;
+
+}
+
+@media (max-width: 480px) {
+  .FooterContainer {
+    margin-top: 50px;
+    width: 95%;
+    border-radius: 10px;
+  }
+
+  .ending {
+    font-size: 100px;
+  }
+
+  .customerInfoAndDelivery {
+        width: 100%;
+  }
+
+ 
 }

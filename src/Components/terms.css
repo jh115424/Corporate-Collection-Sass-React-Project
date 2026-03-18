@@ -217,3 +217,10 @@ body {
     padding: 24px;
   }
 }
+
+@media (max-width: 480px) {
+  * {
+    margin: revert;
+  }
+}
+

@@ -91,6 +91,7 @@
 .monthHeaderLeftArrow,
 .monthHeaderRightArrow {
   margin-left: 50px;
+  margin-right: 50px;
   border: 2px solid gold;
   width: 30px;
   color: gold;
@@ -186,4 +187,47 @@
 
 span {
   color: red;
+}
+
+@media (max-width: 480px) {
+  .times {
+    width: 70%;
+    font-size: 25px;
+  }
+
+  .timePick {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .timeSelection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .yourInfoForm,
+  .bookConsultation {
+    width: 90%;
+  }
+
+  .yourInfoForm input {
+    width: 90%;
+  }
+
+ .yourInfoForm select {
+    width: 90%;
+  }
+
+  .yourInfoForm label {
+   
+    margin-left: 5%;
+  }
+  
+
+  .projectDescription label {
+
+    text-align: center;
+  }
+
+
 }

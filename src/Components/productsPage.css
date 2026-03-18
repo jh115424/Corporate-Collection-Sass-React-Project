@@ -61,3 +61,10 @@
   background-color: black;
   color: white;
 }
+
+@media (max-width: 480px) {
+  .catalogDisplayContainer {
+    display: flex;
+    justify-content: center;
+  }
+}

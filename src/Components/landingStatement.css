@@ -49,5 +49,10 @@
   .mainStatement {
 
     font-size: 36px;
+    line-height: 50px;
+  }
+
+  .buttonsStatement {
+    margin-bottom: 40px;
   }
 }

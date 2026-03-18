@@ -36,3 +36,39 @@
   overflow: hidden;
   width: 100%;
 }
+
+
+
+@media (max-width: 480px) {
+
+  .furnitureVideoTestimonialContainer {
+       height: 450px;
+       width: 80%;
+
+  }
+
+
+  .videoIntroPhrase {
+    font-size: 18px;
+    flex-direction: column;
+    align-items: center;
+    height: 5px;
+
+  }
+
+  .phrase {
+
+    margin-top: 10px;
+    text-align: center;
+    margin-right: auto;
+  }
+
+.CEO-Video {
+
+  width: 250px;
+  height: 275px;
+  margin-right: 20px;
+  margin-top: 2px;
+
+}
+}

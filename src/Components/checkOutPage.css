@@ -2,6 +2,13 @@
   font-family: "Lora", serif;
   background: linear-gradient(135deg, #e8ebef 0%, #dce1e8 100%);
   color: #4a5568;
+
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  gap: 30px;
+  min-height: 100vh;
+  width: 100%;
 }
 .title {
   text-align: center;
@@ -47,14 +54,6 @@
   border-radius: 5px;
   background-color: rgb(240, 239, 239);
   border: 1.8px solid #c5cdd7;
-}
-.checkoutContainer {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 50px;
-  gap: 30px;
-  min-height: 100vh;
-  width: 100%;
 }
 
 .customerInfoAndDelivery {
@@ -226,4 +225,56 @@
   margin-bottom: 7px;
   color: #4a5568;
   font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .title {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subTitle {
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  .checkoutContainer {
+    flex-direction: column;
+  }
+
+  .customerInfoAndDelivery,
+  .orderInformation {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .orderInformation {
+    margin-top: 20px;
+  }
+
+  .cartFurnitureInfo {
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  .checkOutFurnitureImage {
+    width: 350px;
+    height: 300px;
+  }
+
+  .pricingBreakdown {
+    font-size: 20px;
+  }
+
+  .sendOrderButton {
+    height: 75px;
+  }
+
+  .servicePackageTitle {
+    height: 200px;
+  }
 }

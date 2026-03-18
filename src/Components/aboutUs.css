@@ -87,9 +87,6 @@
   margin-top: 100px;
 }
 
-.missionStatementContainer {
-}
-
 .biographyHeader,
 .missionHeader {
   text-align: center;
@@ -135,4 +132,27 @@
 
 .aboutUsContainer .companyNameFinisher {
   background-color: #2c2416;
+}
+
+@media (max-width: 480px) {
+  .heroBackgroundImage,
+  .heroMiddleImage {
+    width: 90%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .statisticsContainer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .statsBreakdown {
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
 }

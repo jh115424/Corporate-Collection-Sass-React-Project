@@ -6,9 +6,16 @@
 
 .threeImages {
   display: flex;
-
   width: 700px;
   height: 500px;
   border-radius: 30px;
   box-shadow: 2px 2px 2px 2px rgb(176, 176, 225);
+}
+
+
+@media (max-width: 480px) {
+  .threeImages {
+    height: 300px;
+    width: 400px;
+  }
 }
