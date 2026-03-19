@@ -101,3 +101,41 @@
 .jobAvailability {
   line-height: 2;
 }
+
+@media (max-width: 480px) {
+  .careerContainer {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .careerHeader {
+    margin-top: 10px;
+    align-items: center;
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .hiringMotto {
+    font-size: 12px;
+  }
+  .textSection {
+    width: 90%;
+    height: 100px;
+    clip-path: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .careerTopImageTwo {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    clip-path: none;
+  }
+}
