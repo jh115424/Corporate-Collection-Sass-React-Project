@@ -217,7 +217,7 @@ export default function ProductsPage({ cart, setCart }) {
           </div>
         ))}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

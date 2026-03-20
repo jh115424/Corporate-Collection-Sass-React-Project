@@ -50,7 +50,7 @@ export default function Privacy() {
         </div>
         <div className="messageMottoThree">
           <p>
-            CRAFTER WITH CARE. <br />
+            CRAFTED WITH CARE. <br />
             HANDLED WITH DISCRETION.
           </p>
         </div>
@@ -105,10 +105,9 @@ export default function Privacy() {
         <div className="ccSecondMotto">
           <p>
             At CC Corporate Collection, we believe the spaces you work in
-            deserve the same <br />
-            discretion as the conversations held within them. This policy
-            explains, plainly,
-            <br /> how we handle your personal information.
+            deserve the same discretion as the conversations held within them.
+            This policy explains, plainly, how we handle your personal
+            information.
           </p>
         </div>
         <div className="tableOfContentLine"></div>
@@ -134,11 +133,9 @@ export default function Privacy() {
           <h2>02 &nbsp; &nbsp; How we use it</h2>
           <p className="usageMessage">
             Your information is used to fulfil your orders, respond to your
-            enquiries, and — where <br />
-            you have given permission — send you updates about new collections
-            and events. <br />
-            We do not sell data. We do not use it for automated profiling that
-            affects your rights.
+            enquiries, and — where you have given permission — send you updates
+            about new collections and events. We do not sell data. We do not use
+            it for automated profiling that affects your rights.
           </p>
         </div>
         <div className="titleUnderline"></div>
@@ -146,13 +143,12 @@ export default function Privacy() {
           <h2>03 &nbsp; &nbsp; Sharing your data</h2>
           <p className="sharingMessage">
             We share personal data only with trusted partners essential to
-            delivering our service: <br />
-            - Logistics and delivery partners for order fulfillment <br />-
-            Payment processors operating under strict security standards <br />
-            - Our interior design consultants, where you have engaged them
-            directly <br /> <br />
+            delivering our service: - Logistics and delivery partners for order
+            fulfillment Payment processors operating under strict security
+            standards - Our interior design consultants, where you have engaged
+            them directly <br /> <br />
             All third parties are bound by confidentiality agreements. We never
-            sell or trade your <br /> information.
+            sell or trade your information.
           </p>
         </div>
         <div className="sharingUnderline"></div>
@@ -160,11 +156,9 @@ export default function Privacy() {
           <h2>04 &nbsp; &nbsp; Cookies</h2>
           <p className="cookiesMessage">
             We use a minimal set of cookies to keep the site functional and to
-            understand how <br />
-            visitors move through it. No third-party advertising cookies are
-            placed. You may adjust <br />
-            your preferences at any time via the cookie settings in your
-            browser.
+            understand how visitors move through it. No third-party advertising
+            cookies are placed. You may adjust your preferences at any time via
+            the cookie settings in your browser.
           </p>
         </div>
         <div className="cookiesUnderline"></div>
@@ -172,10 +166,9 @@ export default function Privacy() {
           <h2>05 &nbsp; &nbsp; Your rights</h2>
           <div className="rightsMessage">
             You have the right to access, correct, or delete any personal data
-            we hold. You may also <br />
-            withdraw consent for marketing communications at any time. To
-            exercise any of these <br />
-            rights, please contact our privacy team using the details below.
+            we hold. You may also withdraw consent for marketing communications
+            at any time. To exercise any of these rights, please contact our
+            privacy team using the details below.
           </div>
         </div>
         <div className="rightsUnderline"></div>
@@ -183,9 +176,9 @@ export default function Privacy() {
           <h2>06 &nbsp; &nbsp; Security</h2>
           <div className="securityMessage">
             We maintain industry-standard technical and organizational measures
-            to protect your data <br />
-            from unauthorized access, loss, or disclosure. Our systems are
-            reviewed regularly and <br /> updated in line with best practice.
+            to protect your data from unauthorized access, loss, or disclosure.
+            Our systems are reviewed regularly and updated in line with best
+            practice.
           </div>
         </div>
 
@@ -194,9 +187,7 @@ export default function Privacy() {
           <br />
           <p className="contactInfoEnding">
             Questions, requests, or concerns about how we handle your data are{" "}
-            <br />
             always welcome. Write to us at CC Corporate Collections., 1370 S.{" "}
-            <br />
             Illinois Drive, Suite 1820, Floor 18, Chicago, Illinois 60621
           </p>
         </div>

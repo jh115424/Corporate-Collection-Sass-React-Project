@@ -214,20 +214,15 @@ span {
     width: 90%;
   }
 
- .yourInfoForm select {
+  .yourInfoForm select {
     width: 90%;
   }
 
   .yourInfoForm label {
-   
     margin-left: 5%;
   }
-  
 
   .projectDescription label {
-
     text-align: center;
   }
-
-
 }

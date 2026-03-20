@@ -12,7 +12,6 @@
   box-shadow: 2px 2px 2px 2px rgb(176, 176, 225);
 }
 
-
 @media (max-width: 480px) {
   .threeImages {
     height: 300px;

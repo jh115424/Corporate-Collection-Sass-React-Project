@@ -8,7 +8,7 @@ export default function furnitureSlab() {
       <div className="furnitureVideoTestimonialContainer">
         <div className="videoIntroPhrase">
           <p className="phrase">
-            Our company makes you look at luxury <br />
+            Our company makes you look at luxury 
             office furniture from a different perspective
           </p>
           <div className="CeoVideoPlayer">

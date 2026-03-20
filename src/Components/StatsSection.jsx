@@ -1,7 +1,6 @@
 import React from "react";
 import "./statsSection.css";
 
-
 export default function StatsSection() {
   return (
     <>
@@ -25,7 +24,6 @@ export default function StatsSection() {
           </div>
         </div>
       </div>
-   
     </>
   );
 }

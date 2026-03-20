@@ -180,5 +180,28 @@ a {
   color: black;
 }
 
+@media (max-width: 480px) {
+  .collectionCriteria,
+  .dataUsage,
+  .sharing,
+  .cookie,
+  .yourRights,
+  .security {
+    font-size: 16px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
 
+  .howToReach {
+    height: 450px;
+  }
 
+  .contactInfoEnding {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .messageMottoThree {
+    font-size: 16px;
+  }
+}

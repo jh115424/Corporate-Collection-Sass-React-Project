@@ -45,23 +45,27 @@
   .card1,
   .card2,
   .card3,
-  .card4  {
-
+  .card4 {
     width: 200px;
     height: 250px;
     align-content: center;
-  
   }
 
   .card1,
   .card2,
   .card3,
   .card4 {
-
     align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    grid-template-columns: repeat(2, 2fr);
+    
+    row-gap: 40px;
   }
 
 
-
-
+  
 }

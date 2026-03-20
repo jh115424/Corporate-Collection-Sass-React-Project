@@ -236,37 +236,28 @@
   justify-content: center;
 }
 
-
 @media (max-width: 480px) {
-
   .shoppingCartContainer {
     display: flex;
     flex-direction: column;
-   
   }
 
   .productImage {
-
     display: flex;
     flex-direction: column;
-  
   }
 
-
   .titleAndImage > div {
-
     flex-direction: column;
     align-items: center;
   }
 
   .colorName {
-      gap: 100px;
-
+    gap: 100px;
   }
-.dividerLine {
-
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
+  .dividerLine {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
 }

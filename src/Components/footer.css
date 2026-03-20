@@ -73,7 +73,6 @@ li {
 .customerInfoAndDelivery {
   margin-top: 100px;
   margin-bottom: 100px;
-
 }
 
 @media (max-width: 480px) {
@@ -88,8 +87,14 @@ li {
   }
 
   .customerInfoAndDelivery {
-        width: 100%;
+    width: 100%;
   }
+}
 
- 
+@media (max-width: 768px) {
+
+  .FooterContainer {
+
+    margin-top: 50px;
+  }
 }
