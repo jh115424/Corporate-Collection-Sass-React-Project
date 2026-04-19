@@ -353,3 +353,21 @@ span {
     flex-direction: column;
   }
 }
+
+@media (max-width: 768px) {
+  .flexContainer {
+    flex-direction: column;
+  }
+
+  .companyInfoContainer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .advertisingImageContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}

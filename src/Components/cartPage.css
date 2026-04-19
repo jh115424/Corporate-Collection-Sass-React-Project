@@ -261,3 +261,21 @@
     width: 70%;
   }
 }
+
+@media (max-width: 768px) {
+  .dividerLine {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .shoppingCartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .titleAndImage {
+    flex-direction: column;
+  }
+}

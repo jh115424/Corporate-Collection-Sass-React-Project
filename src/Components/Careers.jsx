@@ -6,6 +6,7 @@ import React from "react";
 import CareerTopImage from "../assets/CareerImage/CareerTopImageNew.png";
 import CareerTopImageNew from "../assets/CareerImage/CareerTopImageNew.png";
 import { Link } from "react-router";
+import Footer from "./Footer";
 
 export default function Careers() {
   const [headerBg, setHeaderBg] = useState("#0e0e0e");
@@ -84,6 +85,39 @@ export default function Careers() {
           </p>
         </div>
       </div>
+      <div className="FooterContainer">
+        <div className="firstFooterColumn">
+          <p>Company</p>
+          <ul className="footerList">
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/press">Press</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="secondFooterColumn">
+          <p>Resources</p>
+          <ul className="footerList">
+            <li>
+              <Link to="/careers">Careers</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="thirdFooterColumn">
+          <p>Support</p>
+          <ul className="footerList">
+            <li>
+              <Link to="/privacy">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link to="/terms">Terms of Service</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div className="companyNameFinisher">
         <p className="ending">Corporate Collection</p>
       </div>

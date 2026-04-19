@@ -273,20 +273,28 @@ export default function WholesaleInquiriesForm() {
             {send ? "isSending..." : "Request Wholesale Info"}
           </button>
         </div>
-        <div className="advertisingImageContainer">
-          <img src={TurnstoneLDesk} className="image" />
 
-          <h1 className="containerName">Turnstone L Desk</h1>
-          <p>$1299.00</p>
-          <img src={DomesDesk} className="image" />
-          <h1 className="containerName">Domes Desk</h1>
-          <p>$799.00</p>
-          <img src={LDesk} className="image" />
-          <h1 className="containerName">L Desk</h1>
-          <p>$1599.00</p>
-          <img src={NuipenDesk} className="image" />
-          <h1 className="containerName">Nuipen Desk</h1>
-          <p>$1699.00</p>
+        <div className="advertisingImageContainer">
+          <div>
+            <img src={TurnstoneLDesk} className="image" />
+            <h1 className="containerName">Turnstone L Desk</h1>
+            <p>$1299.00</p>
+          </div>
+          <div>
+            <img src={DomesDesk} className="image" />
+            <h1 className="containerName">Domes Desk</h1>
+            <p>$799.00</p>
+          </div>
+          <div>
+            <img src={LDesk} className="image" />
+            <h1 className="containerName">L Desk</h1>
+            <p>$1599.00</p>
+          </div>
+          <div>
+            <img src={NuipenDesk} className="image" />
+            <h1 className="containerName">Nuipen Desk</h1>
+            <p>$1699.00</p>
+          </div>
         </div>
       </div>
       <Footer />

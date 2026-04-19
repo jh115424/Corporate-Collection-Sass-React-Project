@@ -226,3 +226,19 @@ span {
     text-align: center;
   }
 }
+
+@media (max-width: 768px) {
+  .timeSelection {
+    gap: 20px;
+  }
+
+  .formTitle,
+  .yourInfoForm,
+  .dateThatIsSelected {
+    margin-top: 30px;
+  }
+
+  .yourInfoForm {
+    width: 100%;
+  }
+}

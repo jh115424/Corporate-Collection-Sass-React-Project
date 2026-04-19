@@ -68,3 +68,9 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .catalogDisplayContainer {
+    justify-content: space-around;
+  }
+}

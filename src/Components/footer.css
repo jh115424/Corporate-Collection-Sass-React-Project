@@ -1,3 +1,7 @@
+
+
+
+
 .FooterContainer {
   background-color: rgb(62, 61, 61);
   height: 150px;
@@ -84,6 +88,7 @@ li {
 
   .ending {
     font-size: 100px;
+    z-index: 10;
   }
 
   .customerInfoAndDelivery {
@@ -96,5 +101,9 @@ li {
   .FooterContainer {
 
     margin-top: 50px;
+
+ 
   }
+
+
 }

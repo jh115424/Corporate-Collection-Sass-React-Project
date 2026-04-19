@@ -92,7 +92,7 @@ const furnitureItems = [
     imageURL: ThreeRingsLight,
     name: "3 Rings Black Pendant Light",
     price: 2699.0,
-    category: "Lights",
+    category: "Lighting",
   },
   {
     // id: 11,

@@ -139,3 +139,11 @@
     clip-path: none;
   }
 }
+
+@media (max-width: 768px) {
+    .noPositionCard {
+   margin-bottom: 50px;
+    }
+
+  
+}

@@ -157,7 +157,8 @@ export default function Consultation() {
           {calendarData.map((item, index) => (
             <div
               key={index}
-              className={`dates ${selectedDate === item.day ? "selected" : ""}`}
+              // className={`dates ${selectedDate === item.day ? "selected" : ""}`}
+              className={`dates ${item && selectedDate === item.day ? "selected" : ""}`}
               onClick={() => setSelectedDate(item.day)}
             >
               {item === null ? "" : item.day}
