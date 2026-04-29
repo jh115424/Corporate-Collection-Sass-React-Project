@@ -1,3 +1,114 @@
+// import React from "react";
+// import Die from "./ProductsPage";
+// import SubHeader from "./SubHeader";
+// import { useNavigate } from "react-router";
+// import "./productsPage.css";
+// sets/CategoryFurniture/ExecutiveReceptionFurnitureImages/TwoSeatGrayReceptionChairs.jpg";
+// import { useState } from "react";
+// import { useParams } from "react-router";
+// import { useEffect } from "react";
+// import Footer from "./Footer";
+// import apiClient from "../api/axiosInstance";
+
+// export default function ProductsPage({ cart, setCart }) {
+
+//   const { category } = useParams();
+
+//   const [searchFurniture, setSearchFurniture] = useState("all");
+
+//   const [sortFurniture, setSortFurniture] = useState("");
+//   const [furnitureItems, setFurnitureItems] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null)
+
+//   useEffect(() => {
+//     // eslint-disable-next-line react-hooks/set-state-in-effect
+//     setSearchFurniture(category ? category : "all");
+//   }, [category]);
+
+//   useEffect(() => {
+
+//   })
+
+//   const pickedFurnitureItems = furnitureItems.filter((furniture) =>
+//     searchFurniture === "all" ? true : furniture.category === searchFurniture,
+//   );
+
+//   const sortedItems =
+//     sortFurniture === ""
+//       ? pickedFurnitureItems
+//       : sortFurniture === "price-low-to-high"
+//         ? [...pickedFurnitureItems].sort((a, b) => a.price - b.price)
+//         : sortFurniture === "name-a-to-z"
+//           ? [...pickedFurnitureItems].sort((a, b) =>
+//               a.name.localeCompare(b.name),
+//             )
+//           : pickedFurnitureItems;
+
+//   const navigate = useNavigate();
+
+//   const handleAddToCart = (furniture) => {
+//     const existingItem = cart.find((item) => item.name === furniture.name);
+//     if (existingItem) {
+//       const updatedCart = cart.map((item) =>
+//         item.name === furniture.name
+//           ? { ...item, quantity: (item.quantity || 1) + 1 }
+//           : item,
+//       );
+//       setCart(updatedCart);
+//     } else {
+//       setCart([...cart, { ...furniture, quantity: 1 }]);
+//     }
+//     console.log("Adding to cart:", furniture);
+//     navigate("/cart");
+//   };
+//   return (
+//     <>
+//       <SubHeader />
+//       <div className="discountBanner">
+//         <p>CLIENTS SAVE 25% WITH VOUCHER</p>
+//       </div>
+
+//       <div className="productIntroBanner">
+//         <span>Executive </span>Furnishings Collection
+//       </div>
+//       <p className="tagline">Luxury you can feel. Quality you can trust.</p>
+
+//       <div className="sortDropdown">
+//         <select
+//           id="dropDown"
+//           value={sortFurniture}
+//           onChange={(event) => setSortFurniture(event.target.value)}
+//         >
+//           <option value="">Sort By</option>
+//           <option value="price-low-to-high">Price: Low to High</option>
+//           <option value="name-a-to-z">Name: A to Z</option>
+//         </select>
+//       </div>
+
+//       <div className="catalogDisplayContainer">
+//         {sortedItems.map((furniture, index) => (
+//           <div key={index}>
+//             <img src={furniture.imageURL} className="furnitureImage" />
+//             <div className="furnitureName">
+//               {furniture.name && <span>{furniture.name}</span>}
+//             </div>
+//             <div className="furniturePrice">{furniture.price}</div>
+
+//             <button
+//               onClick={() => handleAddToCart(furniture)}
+//               className="putInCart"
+//             >
+//               Add to Cart
+//             </button>
+//           </div>
+//         ))}
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// }
+
 import React from "react";
 import Die from "./ProductsPage";
 import SubHeader from "./SubHeader";
@@ -22,6 +133,7 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import { useEffect } from "react";
 import Footer from "./Footer";
+import apiClient from "../api/axiosInstance";
 
 const furnitureItems = [
   {

@@ -63,6 +63,7 @@
 
 .productsButton,
 .productsTopMenuLeft,
+.logOutButton,
 .wholesaleButton {
   margin-left: auto;
 }
@@ -70,6 +71,7 @@
 .contactButton,
 .productsButton,
 .schedulingButton,
+.logOutButton,
 .wholesaleButton,
 .productsTopMenuLeft p {
   padding: 8px 16px;
@@ -80,12 +82,19 @@
 .contactButton,
 .productsButton,
 .wholesaleButton,
+.logOutButton,
 .schedulingButton .productsTopMenuLeft p:hover {
   background-color: rgb(227 230 231 / 90%);
 }
 .wholesaleButton {
   background-color: black;
   color: white;
+}
+
+.logOutButton {
+  background-color: blue;
+  color: white;
+ 
 }
 
 @media (max-width: 480px) {
@@ -103,13 +112,16 @@
     margin-bottom: 20px;
     margin-right: auto;
 
-    display: flex;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to move to a new line */
+  gap: 10px;
     width: 90%;
     gap: 20px;
     justify-content: center;
   }
 
-  .productsButton {
+  .productsButton,
+  .logOutButton {
     width: 130px;
     height: 50px;
   }
