@@ -5,6 +5,39 @@ import { useState } from "react";
 import { Link } from "react-router";
 import emailjs from "@emailjs/browser";
 import Footer from "./Footer";
+import TurnstoneLDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/GTBlackTurnstoneLDesk.jpg";
+import DomesDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/DomestoLDesk.jpg";
+import LDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/LShapedDesk.jpg";
+import NuipenDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/NuipensDesk.jpg";
+import TribalDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/TribalDesignDesk.jpg";
+import WDimmableLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/18WDimmableBlackLight.jpg";
+import LedChandalierLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/LedChandelier.jpg";
+import ModernLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/ModernPendanLight.jpg";
+import SixteenFeetLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/SixteenFTLedLinearLight.jpg";
+import ThreeRingsLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/ThreeRingsBlackPendantLight.jpg";
+import ArtistHandReceptionChair from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/ArtisthandOfficeReceptionChair.jpg";
+import KinfantRoomBench from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/KinfantWaitingRoomBench.jpg";
+import OmyReceptionArea from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/OmyWaitingRoom.jpg";
+import SetOfTwoBlackChairs from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/SetOfTwoReceptionBlackChairs.jpg";
+import TwoGrayReceptionChairs from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/TwoSeatGrayReceptionChairs.jpg";
+
+const imageMap = {
+  "GTB Black Turnstone L Desk": TurnstoneLDesk,
+  "Domes to L Desk": DomesDesk,
+  "L-Shaped Desk": LDesk,
+  "Nuipens Desk": NuipenDesk,
+  "Tribal Design Desk": TribalDesk,
+  "18W Dimmable Black Light": WDimmableLight,
+  "LED Chandelier": LedChandalierLight,
+  "Modern Pendant Light": ModernLight,
+  "16Ft Led Linear Light": SixteenFeetLight,
+  "3 Rings Black Pendant Light": ThreeRingsLight,
+  "Artist Hand Office Reception Chair": ArtistHandReceptionChair,
+  "Kinfant Waiting Room Bench": KinfantRoomBench,
+  "Omy Waiting Room": OmyReceptionArea,
+  "Barcelona Reception Black Chairs": SetOfTwoBlackChairs,
+  "Lucy Moran Gray Chairs": TwoGrayReceptionChairs,
+};
 
 export default function CartPage({ cart, setCart }) {
   const [isSending, setIsSending] = useState(false);
@@ -30,20 +63,16 @@ export default function CartPage({ cart, setCart }) {
 
   const emailHandleClick = (e) => {
     e.preventDefault();
-
     setIsSending(true);
-
     const serviceId = "service_8fxa1nn";
     const templateId = "template_r3ycwdo";
     const publicKey = "74BZsOVATORg5niqu";
-
     const templateParams = {
       name: "Atlas Enterprises",
       time: "2:30pm",
       title: "Order Confirmation",
       email: "jenniferehodge1@gmail.com",
     };
-
     emailjs
       .send(serviceId, templateId, templateParams, publicKey)
       .then((response) => {
@@ -71,7 +100,7 @@ export default function CartPage({ cart, setCart }) {
               <div key={index}>
                 <div>
                   <img
-                    src={furniture.imageURL}
+                    src={imageMap[furniture.name]}
                     alt="test-image"
                     className="productImage"
                   />
@@ -81,7 +110,6 @@ export default function CartPage({ cart, setCart }) {
                   <p className="productName">{furniture.name} (In stock)</p>
                   <div className="colorName">
                     <p className="color">Gray</p>
-
                     <div className="counter">
                       <p onClick={() => handleMinus(index)} className="minus">
                         -
@@ -161,7 +189,6 @@ export default function CartPage({ cart, setCart }) {
             >
               {isSending ? "Sending..." : "Send Email"}
             </button>
-
             <Link to="/products" className="keepShopping">
               Continue Shopping
             </Link>
@@ -178,7 +205,6 @@ export default function CartPage({ cart, setCart }) {
             You haven't put any items in your cart. Find something for your
             office.
           </p>
-
           <Link to="/products">
             <button className="backToProductPage">Start Shopping!</button>
           </Link>

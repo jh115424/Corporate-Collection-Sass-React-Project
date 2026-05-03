@@ -2,9 +2,9 @@ import { useState } from "react";
 import apiClient from "../api/axiosInstance";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-// import React from "react";
 import "./login.css";
 import SubHeader from "./SubHeader";
+import Footer from "./Footer";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,8 +12,9 @@ export default function Login() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState("");
-  const [isRegistering, setIsRegistering] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -24,12 +25,12 @@ export default function Login() {
     setError(null);
 
     try {
-      const response = await apiClient.post("/auth/register", {
-        email,
-        password,
-      });
+      const response = isRegistering
+        ? await apiClient.post("/auth/register", { email, password, firstName, lastName })
+        : await apiClient.post("/auth/login", { email, password });
 
       login(response.data.user, response.data.token);
+      navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || "Login failed. Please try again");
     } finally {
@@ -44,9 +45,33 @@ export default function Login() {
       <div className="loginPageBody">
         <div className="loginCard">
           <div className="userNameAndPassword">
-            <h2 className="loginTitle">Member Login</h2>
+            <h3 className="loginTitle">Member Login</h3>
 
             <form onSubmit={handleSubmit} className="login-form">
+
+              {isRegistering && (
+                <>
+                  <div className="sideOne">
+                    <input
+                      type="text"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      placeholder="First name"
+                      required
+                    />
+                  </div>
+                  <div className="sideTwo">
+                    <input
+                      type="text"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      placeholder="Last name"
+                      required
+                    />
+                  </div>
+                </>
+              )}
+
               <div className="sideOne">
                 <input
                   className="emailBox"
@@ -61,13 +86,16 @@ export default function Login() {
               <div className="sideTwo">
                 <input
                   className="passwordBox"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="password"
                   required
                 />
               </div>
+              <span onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? "Hide" : "Show"}
+              </span>
 
               {error && <p className="errorMessage">{error}</p>}
 
@@ -111,8 +139,8 @@ export default function Login() {
           </div>
         </div>
       </div>
-
       <button onClick={() => navigate("/")}>Back to site</button>
+      <Footer />
     </>
   );
 }

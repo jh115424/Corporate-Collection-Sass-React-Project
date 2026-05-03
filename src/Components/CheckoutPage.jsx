@@ -7,6 +7,40 @@ import { useState } from "react";
 import Footer from "./Footer";
 import { useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import TurnstoneLDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/GTBlackTurnstoneLDesk.jpg";
+import DomesDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/DomestoLDesk.jpg";
+import LDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/LShapedDesk.jpg";
+import NuipenDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/NuipensDesk.jpg";
+import TribalDesk from "../assets/CategoryFurniture/ExecutiveDeskImages/TribalDesignDesk.jpg";
+import WDimmableLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/18WDimmableBlackLight.jpg";
+import LedChandalierLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/LedChandelier.jpg";
+import ModernLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/ModernPendanLight.jpg";
+import SixteenFeetLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/SixteenFTLedLinearLight.jpg";
+import ThreeRingsLight from "../assets/CategoryFurniture/ExecutiveOfficeLightingImages/ThreeRingsBlackPendantLight.jpg";
+import ArtistHandReceptionChair from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/ArtisthandOfficeReceptionChair.jpg";
+import KinfantRoomBench from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/KinfantWaitingRoomBench.jpg";
+import OmyReceptionArea from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/OmyWaitingRoom.jpg";
+import SetOfTwoBlackChairs from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/SetOfTwoReceptionBlackChairs.jpg";
+import TwoGrayReceptionChairs from "../assets/CategoryFurniture/ExecutiveReceptionFurnitureImages/TwoSeatGrayReceptionChairs.jpg";
+import apiClient from "../api/axiosInstance";
+
+const imageMap = {
+  "GTB Black Turnstone L Desk": TurnstoneLDesk,
+  "Domes to L Desk": DomesDesk,
+  "L-Shaped Desk": LDesk,
+  "Nuipens Desk": NuipenDesk,
+  "Tribal Design Desk": TribalDesk,
+  "18W Dimmable Black Light": WDimmableLight,
+  "LED Chandelier": LedChandalierLight,
+  "Modern Pendant Light": ModernLight,
+  "16Ft Led Linear Light": SixteenFeetLight,
+  "3 Rings Black Pendant Light": ThreeRingsLight,
+  "Artist Hand Office Reception Chair": ArtistHandReceptionChair,
+  "Kinfant Waiting Room Bench": KinfantRoomBench,
+  "Omy Waiting Room": OmyReceptionArea,
+  "Barcelona Reception Black Chairs": SetOfTwoBlackChairs,
+  "Lucy Moran Gray Chairs": TwoGrayReceptionChairs,
+};
 
 export default function CheckoutPage({ cart, setCart }) {
   const [companyEmail, setCompanyEmail] = useState("");
@@ -23,16 +57,12 @@ export default function CheckoutPage({ cart, setCart }) {
   const [cardType, setCardType] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [specialInstructions, setSpecialInstructions] = useState("");
-
   const [orderTotal, setOrderTotal] = useState(0);
   const [listOfItems, setListOfItems] = useState("");
-
   const [send, setIsSending] = useState(false);
-
   const [subtotal, setSubtotal] = useState(0);
   const [memberDiscount, setMemberDiscount] = useState(0);
   const [salesTax, setSalesTax] = useState(0);
-
   const [dateAndTime, setDateAndTime] = useState("");
 
   useEffect(() => {
@@ -40,41 +70,29 @@ export default function CheckoutPage({ cart, setCart }) {
       (total, item) => total + item.price * (item.quantity || 1),
       0,
     );
-
     const calculateDiscount = calculateTotal * 0.25;
-
     const calculateSalesTax = (calculateTotal - calculateDiscount) * 0.055;
-
     const finalTotal = calculateTotal - calculateDiscount + calculateSalesTax;
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOrderTotal(finalTotal);
-
     setSubtotal(calculateTotal);
     setMemberDiscount(calculateDiscount);
     setSalesTax(calculateSalesTax);
   }, [cart]);
 
-  const emailCompanyHandleClick = (e) => {
+  const emailCompanyHandleClick = async (e) => {
     e.preventDefault();
-
     setIsSending(true);
-
     const cartDetailsArray = cart.map((item) => {
       const cartItemsString = `${item.quantity} ${item.name} @ $${item.price}`;
       return cartItemsString;
     });
-
     const cartDetails = cartDetailsArray.join(", ");
-
     setListOfItems(cartDetails);
-
     setDateAndTime(new Date().toLocaleString());
-
     const serviceId = "service_8fxa1nn";
     const templateId = "template_r3ycwdo";
     const publicKey = "74BZsOVATORg5niqu";
-
     const checkoutDataParams = {
       firstName: firstName,
       lastName: lastName,
@@ -94,7 +112,6 @@ export default function CheckoutPage({ cart, setCart }) {
       listOfItems: listOfItems,
       dateAndTime: dateAndTime,
     };
-
     emailjs
       .send(serviceId, templateId, checkoutDataParams, publicKey)
       .then((response) => {
@@ -112,6 +129,30 @@ export default function CheckoutPage({ cart, setCart }) {
       .finally(() => {
         setIsSending(false);
       });
+    try {
+      const orderData = {
+        items: cart.map((item) => ({
+          product: item._id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity || 1,
+        })),
+        shippingAddress: {
+          address: shippingAddress,
+          city: city,
+          state: state,
+          zipCode: zipCode,
+          country: country,
+        },
+        subtotal: subtotal,
+        memberDiscount: memberDiscount,
+        salesTax: salesTax,
+      };
+      const response = await apiClient.post("/orders", orderData);
+      console.log("Order saved", response.data);
+    } catch (err) {
+      console.error("Order failed:", err.response?.data?.message);
+    }
   };
 
   return (
@@ -120,7 +161,6 @@ export default function CheckoutPage({ cart, setCart }) {
       <p className="subTitle">
         Secure Payment Processing • Complimentary White Glove Delivery
       </p>
-
       <div className="checkoutContainer">
         <div className="customerInfoAndDelivery">
           <form
@@ -138,7 +178,6 @@ export default function CheckoutPage({ cart, setCart }) {
               onChange={(e) => setCompanyEmail(e.target.value)}
               required
             />
-
             <label htmlFor="firstName">FIRST NAME</label>
             <input
               id="firstName"
@@ -147,17 +186,14 @@ export default function CheckoutPage({ cart, setCart }) {
               onChange={(e) => setFirstName(e.target.value)}
               required
             />
-
             <label htmlFor="lastName">LAST NAME</label>
             <input
               id="lastName"
               type="text"
               value={lastName}
-              L
               onChange={(e) => setLastName(e.target.value)}
               required
             />
-
             <label htmlFor="phoneNUmber">PHONE NUMBER</label>
             <input
               id="phoneNumber"
@@ -169,10 +205,8 @@ export default function CheckoutPage({ cart, setCart }) {
               }}
               required
             />
-
             <p className="sectionHeader">Delivery Address</p>
             <div className="formUnderline"></div>
-
             <label htmlFor="businessName">BUSINESS NAME (OPTIONAL)</label>
             <input
               id="businessName"
@@ -180,7 +214,6 @@ export default function CheckoutPage({ cart, setCart }) {
               value={businessName}
               onChange={(e) => setBusinessName(e.target.value)}
             />
-
             <label htmlFor="shippingAddress">SHIPPING ADDRESS</label>
             <input
               id="shippingAddress"
@@ -189,7 +222,6 @@ export default function CheckoutPage({ cart, setCart }) {
               onChange={(e) => setShippingAddress(e.target.value)}
               required
             />
-
             <label htmlFor="suiteOrFloor">SUITE/BUILDING/FLOOR</label>
             <input
               id="suiteOrFloor"
@@ -197,7 +229,6 @@ export default function CheckoutPage({ cart, setCart }) {
               value={suiteOrFloor}
               onChange={(e) => setSuiteOrFloor(e.target.value)}
             />
-
             <label htmlFor="city">CITY</label>
             <input
               id="city"
@@ -206,7 +237,6 @@ export default function CheckoutPage({ cart, setCart }) {
               onChange={(e) => setCity(e.target.value)}
               required
             />
-
             <label htmlFor="state">STATE</label>
             <input
               id="state"
@@ -215,7 +245,6 @@ export default function CheckoutPage({ cart, setCart }) {
               onChange={(e) => setState(e.target.value)}
               required
             />
-
             <label htmlFor="zipCode">ZIP CODE</label>
             <input
               id="zipCode"
@@ -227,7 +256,6 @@ export default function CheckoutPage({ cart, setCart }) {
               }}
               required
             />
-
             <label htmlFor="country">COUNTRY</label>
             <input
               id="country"
@@ -236,7 +264,6 @@ export default function CheckoutPage({ cart, setCart }) {
               onChange={(e) => setCountry(e.target.value)}
               required
             />
-
             <p className="sectionHeader">Payment Method</p>
             <label htmlFor="cardType">Payment Type</label>
             <select
@@ -252,7 +279,6 @@ export default function CheckoutPage({ cart, setCart }) {
               <option value="Amex">Amex</option>
               <option value="Discover">Discover</option>
             </select>
-
             <label htmlFor="cardNumber">ENTER CARD NUMBER</label>
             <input
               id="cardNumber"
@@ -264,7 +290,6 @@ export default function CheckoutPage({ cart, setCart }) {
               }}
               required
             />
-
             <label htmlFor="specialInstructions">SPECIAL INSTRUCTIONS</label>
             <textarea
               id="specialInstructions"
@@ -278,14 +303,13 @@ export default function CheckoutPage({ cart, setCart }) {
 
         <div className="orderInformation">
           <p className="orderFormHeader">Your Order</p>
-
           {cart.length > 0 && (
             <div className="checkoutBasketContainer">
               {cart.map((furniture, index) => (
                 <div key={index}>
                   <div className="cartFurnitureInfo">
                     <img
-                      src={furniture.imageURL}
+                      src={imageMap[furniture.name]}
                       className="checkOutFurnitureImage"
                     />
                     <div className="checkoutFurnitureName">
@@ -299,7 +323,6 @@ export default function CheckoutPage({ cart, setCart }) {
               ))}
             </div>
           )}
-
           <div className="finalPriceContainer">
             <div className="orderTotalLine"></div>
             <div className="pricingBreakdown">
@@ -317,7 +340,6 @@ export default function CheckoutPage({ cart, setCart }) {
               </p>
             </div>
           </div>
-
           <button
             type="submit"
             form="checkout-form"
