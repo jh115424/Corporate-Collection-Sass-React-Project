@@ -27,7 +27,7 @@ export function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-         <Route path="/" element={<App />} />
+         <Route path="/home" element={<App />} />
 
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/wholesale" element={<WholesaleInquiriesForm />} />
@@ -55,7 +55,7 @@ export function AppRouter() {
         <Route path="/press" element={<Press />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

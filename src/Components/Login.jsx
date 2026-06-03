@@ -26,11 +26,16 @@ export default function Login() {
 
     try {
       const response = isRegistering
-        ? await apiClient.post("/auth/register", { email, password, firstName, lastName })
+        ? await apiClient.post("/auth/register", {
+            email,
+            password,
+            firstName,
+            lastName,
+          })
         : await apiClient.post("/auth/login", { email, password });
 
       login(response.data.user, response.data.token);
-      navigate('/');
+      navigate("/home");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed. Please try again");
     } finally {
@@ -48,7 +53,6 @@ export default function Login() {
             <h3 className="loginTitle">Member Login</h3>
 
             <form onSubmit={handleSubmit} className="login-form">
-
               {isRegistering && (
                 <>
                   <div className="sideOne">
@@ -139,7 +143,7 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <button onClick={() => navigate("/")}>Back to site</button>
+
       <Footer />
     </>
   );
