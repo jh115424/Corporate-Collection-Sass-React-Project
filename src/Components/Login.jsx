@@ -43,6 +43,23 @@ export default function Login() {
     }
   };
 
+  const handleDemo = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await apiClient.post("/auth/login", {
+        email: "demo@cccorporatecollection.com",
+        password: "Demo1234!",
+      });
+      login(response.data.user, response.data.token);
+      navigate("/home");
+    } catch {
+      setError("Demo login failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <SubHeader />
@@ -114,6 +131,14 @@ export default function Login() {
                 </span>
               </p>
             </form>
+
+            <button
+              onClick={handleDemo}
+              disabled={loading}
+              className="demoButton"
+            >
+              {loading ? "Signing in..." : "Try Demo Account"}
+            </button>
           </div>
 
           <div className="guestAccess">

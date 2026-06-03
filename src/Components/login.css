@@ -118,3 +118,14 @@ input {
   border-radius: 5px;
 }
 
+.demoButton {
+  height: 40px;
+  background-color: transparent;
+  color: #4e342e;
+  border: 1px solid #4e342e;
+  border-radius: 5px;
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
